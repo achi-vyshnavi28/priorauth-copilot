@@ -28,6 +28,7 @@ log = logging.getLogger("priorauth")
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 app = FastAPI(title="PriorAuth Copilot", description="Rules-plus-AI prior authorization on CMS coverage policies")
 app.add_middleware(CORSMiddleware, allow_origins=os.getenv("PRIORAUTH_CORS", "http://localhost:5175").split(","),
+                   allow_origin_regex=os.getenv("PRIORAUTH_CORS_REGEX"),  # e.g. https://.*\.onrender\.com when deployed
                    allow_methods=["GET", "POST"], allow_headers=["Content-Type"])
 
 

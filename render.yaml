@@ -1,0 +1,28 @@
+# Render Blueprint: New -> Blueprint -> pick this repo. Deploys the API (Docker) and the React console (static site).
+# Optional: add GROQ_API_KEY in the API service's Environment tab to use the LLM evidence agent (keyword fallback otherwise).
+services:
+  - type: web
+    name: priorauth-api
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: PRIORAUTH_DEMO
+        value: "1"
+      - key: PRIORAUTH_EXTRACTOR
+        value: llm
+      - key: PRIORAUTH_CORS_REGEX
+        value: https://.*\.onrender\.com
+      - key: GROQ_API_KEY
+        sync: false
+  - type: web
+    name: priorauth-console
+    runtime: static
+    buildCommand: cd web && npm ci && npm run build
+    staticPublishPath: web/dist
+    envVars:
+      - key: VITE_API_HOST
+        fromService:
+          type: web
+          name: priorauth-api
+          property: host
