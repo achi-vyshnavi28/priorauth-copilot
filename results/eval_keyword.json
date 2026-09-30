@@ -1,0 +1,806 @@
+{
+ "summary": {
+  "mode": "keyword",
+  "cases": 22,
+  "decision_accuracy": 0.909,
+  "false_approvals": 0,
+  "correct_approvals": 4,
+  "gold_approvals": 6,
+  "fact_accuracy": 0.827,
+  "discarded_unverified_quotes": 0,
+  "extractor_used": [
+   "keyword"
+  ]
+ },
+ "cases": [
+  {
+   "case_id": "MTS-0002",
+   "policy": "ncd_100_1_bariatric",
+   "extractor": "keyword",
+   "gold": "approve",
+   "decision": "approve",
+   "pend_reason": null,
+   "facts_correct": {
+    "bmi": true,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": true
+   },
+   "facts": {
+    "bmi": {
+     "value": 51.0,
+     "quote": "BMI of 51",
+     "verified": true,
+     "note": ""
+    },
+    "obesity_comorbidity": {
+     "value": true,
+     "quote": "PAST MEDICAL HISTORY: , He has difficulty climbing stairs, difficulty with airline seats, tying shoes, used to public seating, difficulty walking, high cholesterol, and high blood pressure.",
+     "verified": true,
+     "note": ""
+    },
+    "prior_medical_treatment_failed": {
+     "value": true,
+     "quote": "When he loses weight he always regains it and he gains back more than he lost.",
+     "verified": true,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-4417",
+   "policy": "ncd_100_1_bariatric",
+   "extractor": "keyword",
+   "gold": "approve",
+   "decision": "approve",
+   "pend_reason": null,
+   "facts_correct": {
+    "bmi": true,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": true
+   },
+   "facts": {
+    "bmi": {
+     "value": 69.7,
+     "quote": "BMI of 69.7",
+     "verified": true,
+     "note": ""
+    },
+    "obesity_comorbidity": {
+     "value": true,
+     "quote": "HISTORY OF PRESENT ILLNESS: , In short, the patient is a 55-year-old gentleman with long-standing morbid obesity, resistant to nonsurgical methods of weight loss with BMI of 69.7 with comorbidities of hypertension, atria",
+     "verified": true,
+     "note": ""
+    },
+    "prior_medical_treatment_failed": {
+     "value": true,
+     "quote": "HISTORY OF PRESENT ILLNESS: , In short, the patient is a 55-year-old gentleman with long-standing morbid obesity, resistant to nonsurgical methods of weight loss with BMI of 69.7 with comorbidities of hypertension, atria",
+     "verified": true,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-4561",
+   "policy": "ncd_100_1_bariatric",
+   "extractor": "keyword",
+   "gold": "approve",
+   "decision": "approve",
+   "pend_reason": null,
+   "facts_correct": {
+    "bmi": true,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": true
+   },
+   "facts": {
+    "bmi": {
+     "value": 46.0,
+     "quote": "body mass index of 46",
+     "verified": true,
+     "note": ""
+    },
+    "obesity_comorbidity": {
+     "value": true,
+     "quote": "She has obesity-related comorbidities, which includes hypertension and hypercholesterolemia.",
+     "verified": true,
+     "note": ""
+    },
+    "prior_medical_treatment_failed": {
+     "value": true,
+     "quote": "The patient states that she has been overweight for approximately 35 years and has tried multiple weight loss modalities in the past including Weight Watchers, NutriSystem, Jenny Craig, TOPS, cabbage diet, grape fruit di",
+     "verified": true,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-4414",
+   "policy": "ncd_100_1_bariatric",
+   "extractor": "keyword",
+   "gold": "pend",
+   "decision": "pend",
+   "pend_reason": "missing_documentation",
+   "facts_correct": {
+    "bmi": true,
+    "obesity_comorbidity": false,
+    "prior_medical_treatment_failed": true
+   },
+   "facts": {
+    "bmi": {
+     "value": 43.0,
+     "quote": "BMI of 43",
+     "verified": true,
+     "note": ""
+    },
+    "obesity_comorbidity": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "prior_medical_treatment_failed": {
+     "value": true,
+     "quote": "In short, she is a 33-year-old lady with a BMI of 43, otherwise healthy with unsuccessful nonsurgical methods of weight loss.",
+     "verified": true,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-0013",
+   "policy": "ncd_100_1_bariatric",
+   "extractor": "keyword",
+   "gold": "pend",
+   "decision": "pend",
+   "pend_reason": "missing_documentation",
+   "facts_correct": {
+    "bmi": true,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": true
+   },
+   "facts": {
+    "bmi": {
+     "value": 41.0,
+     "quote": "body mass index of 41",
+     "verified": true,
+     "note": ""
+    },
+    "obesity_comorbidity": {
+     "value": true,
+     "quote": "PAST MEDICAL HISTORY:,  Significant for hypertension.",
+     "verified": true,
+     "note": ""
+    },
+    "prior_medical_treatment_failed": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-4566",
+   "policy": "ncd_100_1_bariatric",
+   "extractor": "keyword",
+   "gold": "pend",
+   "decision": "pend",
+   "pend_reason": "missing_documentation",
+   "facts_correct": {
+    "bmi": true,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": true
+   },
+   "facts": {
+    "bmi": {
+     "value": 43.0,
+     "quote": "BMI of 43",
+     "verified": true,
+     "note": ""
+    },
+    "obesity_comorbidity": {
+     "value": true,
+     "quote": "She has had non-insulin dependent diabetes for about eight years now.",
+     "verified": true,
+     "note": ""
+    },
+    "prior_medical_treatment_failed": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-4567",
+   "policy": "ncd_100_1_bariatric",
+   "extractor": "keyword",
+   "gold": "pend",
+   "decision": "pend",
+   "pend_reason": "missing_documentation",
+   "facts_correct": {
+    "bmi": true,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": true
+   },
+   "facts": {
+    "bmi": {
+     "value": 43.0,
+     "quote": "BMI of 43",
+     "verified": true,
+     "note": ""
+    },
+    "obesity_comorbidity": {
+     "value": true,
+     "quote": "PAST MEDICAL HISTORY: , She has a history of hypertension and shortness of breath.",
+     "verified": true,
+     "note": ""
+    },
+    "prior_medical_treatment_failed": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-3942",
+   "policy": "ncd_100_1_bariatric",
+   "extractor": "keyword",
+   "gold": "pend",
+   "decision": "pend",
+   "pend_reason": "missing_documentation",
+   "facts_correct": {
+    "bmi": true,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": true
+   },
+   "facts": {
+    "bmi": {
+     "value": 51.0,
+     "quote": "BMI is 51",
+     "verified": true,
+     "note": ""
+    },
+    "obesity_comorbidity": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "prior_medical_treatment_failed": {
+     "value": true,
+     "quote": "She has made multiple attempts at nonsurgical weight loss without success.",
+     "verified": true,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-0001",
+   "policy": "ncd_100_1_bariatric",
+   "extractor": "keyword",
+   "gold": "pend",
+   "decision": "pend",
+   "pend_reason": "missing_documentation",
+   "facts_correct": {
+    "bmi": true,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": true
+   },
+   "facts": {
+    "bmi": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "obesity_comorbidity": {
+     "value": true,
+     "quote": "He has gastroesophageal reflux disease.",
+     "verified": true,
+     "note": ""
+    },
+    "prior_medical_treatment_failed": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-0010",
+   "policy": "ncd_100_1_bariatric",
+   "extractor": "keyword",
+   "gold": "pend",
+   "decision": "pend",
+   "pend_reason": "missing_documentation",
+   "facts_correct": {
+    "bmi": true,
+    "obesity_comorbidity": false,
+    "prior_medical_treatment_failed": true
+   },
+   "facts": {
+    "bmi": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "obesity_comorbidity": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "prior_medical_treatment_failed": {
+     "value": true,
+     "quote": "INDICATIONS FOR PROCEDURE: , This is a 50-year-old male who has been overweight for many years and has tried multiple different weight loss diets and programs.",
+     "verified": true,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-0005",
+   "policy": "ncd_100_1_bariatric",
+   "extractor": "keyword",
+   "gold": "pend",
+   "decision": "pend",
+   "pend_reason": "missing_documentation",
+   "facts_correct": {
+    "bmi": true,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": true
+   },
+   "facts": {
+    "bmi": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "obesity_comorbidity": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "prior_medical_treatment_failed": {
+     "value": true,
+     "quote": "She has tried many different diets, but is unsuccessful.",
+     "verified": true,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-0015",
+   "policy": "ncd_100_1_bariatric",
+   "extractor": "keyword",
+   "gold": "pend",
+   "decision": "pend",
+   "pend_reason": "missing_documentation",
+   "facts_correct": {
+    "bmi": true,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": true
+   },
+   "facts": {
+    "bmi": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "obesity_comorbidity": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "prior_medical_treatment_failed": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-1399",
+   "policy": "ncd_100_1_bariatric",
+   "extractor": "keyword",
+   "gold": "pend",
+   "decision": "pend",
+   "pend_reason": "missing_documentation",
+   "facts_correct": {
+    "bmi": true,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": true
+   },
+   "facts": {
+    "bmi": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "obesity_comorbidity": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "prior_medical_treatment_failed": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-1462",
+   "policy": "ncd_240_4_cpap",
+   "extractor": "keyword",
+   "gold": "approve",
+   "decision": "approve",
+   "pend_reason": null,
+   "facts_correct": {
+    "sleep_test_documented": true,
+    "ahi": true,
+    "osa_symptoms": false,
+    "cardiovascular_comorbidity": false
+   },
+   "facts": {
+    "sleep_test_documented": {
+     "value": true,
+     "quote": "The patient underwent an overnight polysomnogram on 09/22/06 and the details of the polysomnographic study are reported separately.",
+     "verified": true,
+     "note": ""
+    },
+    "ahi": {
+     "value": 15.2,
+     "quote": "apnea-hypopnea index of 15.2",
+     "verified": true,
+     "note": ""
+    },
+    "osa_symptoms": {
+     "value": true,
+     "quote": "Furthermore, patients with this condition are susceptible to excessive daytime sleepiness while driving and there is a higher incidence of automobile accident.",
+     "verified": true,
+     "note": ""
+    },
+    "cardiovascular_comorbidity": {
+     "value": true,
+     "quote": "CASE DISCUSSION: , Thank you once again for allowing us to participate in the care of the patient here at the Sleep Clinic., The patient exhibits obstructive sleep apnea, a condition associated with increased risk of myo",
+     "verified": true,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-1468",
+   "policy": "ncd_240_4_cpap",
+   "extractor": "keyword",
+   "gold": "approve",
+   "decision": "pend",
+   "pend_reason": "missing_documentation",
+   "facts_correct": {
+    "sleep_test_documented": false,
+    "ahi": true,
+    "osa_symptoms": false,
+    "cardiovascular_comorbidity": true
+   },
+   "facts": {
+    "sleep_test_documented": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "ahi": {
+     "value": 76.0,
+     "quote": "apnea/hypopnea index 76",
+     "verified": true,
+     "note": ""
+    },
+    "osa_symptoms": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "cardiovascular_comorbidity": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-1465",
+   "policy": "ncd_240_4_cpap",
+   "extractor": "keyword",
+   "gold": "approve",
+   "decision": "pend",
+   "pend_reason": "missing_documentation",
+   "facts_correct": {
+    "sleep_test_documented": true,
+    "ahi": false,
+    "osa_symptoms": true,
+    "cardiovascular_comorbidity": true
+   },
+   "facts": {
+    "sleep_test_documented": {
+     "value": true,
+     "quote": "PROCEDURE:, Sleep study.",
+     "verified": true,
+     "note": ""
+    },
+    "ahi": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "osa_symptoms": {
+     "value": true,
+     "quote": "Excessive daytime sleepiness, dysfunction and memory loss may also occur.",
+     "verified": true,
+     "note": ""
+    },
+    "cardiovascular_comorbidity": {
+     "value": true,
+     "quote": "CLINICAL INFORMATION:, This patient is a 56-year-old gentleman who had symptoms of obstructive sleep apnea with snoring, hypertension.",
+     "verified": true,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-1467",
+   "policy": "ncd_240_4_cpap",
+   "extractor": "keyword",
+   "gold": "pend",
+   "decision": "pend",
+   "pend_reason": "criteria_not_met",
+   "facts_correct": {
+    "sleep_test_documented": true,
+    "ahi": false,
+    "osa_symptoms": true,
+    "cardiovascular_comorbidity": true
+   },
+   "facts": {
+    "sleep_test_documented": {
+     "value": true,
+     "quote": "IMPRESSION:,  Largely normal polysomnogram demonstrating very modest obstructive sleep apnea in the supine position and a very modest periodic limb movement disturbance.",
+     "verified": true,
+     "note": ""
+    },
+    "ahi": {
+     "value": 4.7,
+     "quote": "AHI was 4.7",
+     "verified": true,
+     "note": ""
+    },
+    "osa_symptoms": {
+     "value": true,
+     "quote": "He states he is \"feeling bad in the mornings\" that he has daytime somnolence and \"whenever I wake up I experience dizziness, weakness, stomachache, loss of appetite, drowsiness, overall sore body and a general feeling of",
+     "verified": true,
+     "note": ""
+    },
+    "cardiovascular_comorbidity": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-1308",
+   "policy": "ncd_240_4_cpap",
+   "extractor": "keyword",
+   "gold": "pend",
+   "decision": "pend",
+   "pend_reason": "missing_documentation",
+   "facts_correct": {
+    "sleep_test_documented": true,
+    "ahi": true,
+    "osa_symptoms": true,
+    "cardiovascular_comorbidity": true
+   },
+   "facts": {
+    "sleep_test_documented": {
+     "value": true,
+     "quote": "scheduled for an overnight sleep study",
+     "verified": true,
+     "note": ""
+    },
+    "ahi": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "osa_symptoms": {
+     "value": true,
+     "quote": "REASON FOR VISIT:,  This 48-year-old woman returns in followup after a full-night sleep study performed to evaluate her for daytime fatigue and insomnia.",
+     "verified": true,
+     "note": ""
+    },
+    "cardiovascular_comorbidity": {
+     "value": true,
+     "quote": "Hypertension., 4.",
+     "verified": true,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-1474",
+   "policy": "ncd_240_4_cpap",
+   "extractor": "keyword",
+   "gold": "pend",
+   "decision": "pend",
+   "pend_reason": "criteria_not_met",
+   "facts_correct": {
+    "sleep_test_documented": true,
+    "ahi": false,
+    "osa_symptoms": true,
+    "cardiovascular_comorbidity": true
+   },
+   "facts": {
+    "sleep_test_documented": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "ahi": {
+     "value": 2.7,
+     "quote": "apnea/hypopnea index 2.7",
+     "verified": true,
+     "note": ""
+    },
+    "osa_symptoms": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "cardiovascular_comorbidity": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-1310",
+   "policy": "ncd_240_4_cpap",
+   "extractor": "keyword",
+   "gold": "pend",
+   "decision": "pend",
+   "pend_reason": "missing_documentation",
+   "facts_correct": {
+    "sleep_test_documented": false,
+    "ahi": true,
+    "osa_symptoms": false,
+    "cardiovascular_comorbidity": true
+   },
+   "facts": {
+    "sleep_test_documented": {
+     "value": true,
+     "quote": "Should he succeed in reducing further, we might consider re-running a sleep study to determine whether he still requires a CPAP.",
+     "verified": true,
+     "note": ""
+    },
+    "ahi": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "osa_symptoms": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "cardiovascular_comorbidity": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-1350",
+   "policy": "ncd_240_4_cpap",
+   "extractor": "keyword",
+   "gold": "pend",
+   "decision": "pend",
+   "pend_reason": "criteria_not_met",
+   "facts_correct": {
+    "sleep_test_documented": true,
+    "ahi": false,
+    "osa_symptoms": false,
+    "cardiovascular_comorbidity": true
+   },
+   "facts": {
+    "sleep_test_documented": {
+     "value": true,
+     "quote": "HISTORY OF PRESENT ILLNESS: , This is a 61-year-old woman with a history of polyarteritis nodosa, mononeuritis multiplex involving the lower extremities, and severe sleep apnea returns in followup following an overnight ",
+     "verified": true,
+     "note": ""
+    },
+    "ahi": {
+     "value": 3.0,
+     "quote": "apnea/hypopnea index was 3",
+     "verified": true,
+     "note": ""
+    },
+    "osa_symptoms": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "cardiovascular_comorbidity": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    }
+   }
+  },
+  {
+   "case_id": "MTS-1463",
+   "policy": "ncd_240_4_cpap",
+   "extractor": "keyword",
+   "gold": "pend",
+   "decision": "pend",
+   "pend_reason": "criteria_not_met",
+   "facts_correct": {
+    "sleep_test_documented": true,
+    "ahi": true,
+    "osa_symptoms": true,
+    "cardiovascular_comorbidity": true
+   },
+   "facts": {
+    "sleep_test_documented": {
+     "value": false,
+     "quote": "schedule an overnight sleep study",
+     "verified": true,
+     "note": ""
+    },
+    "ahi": {
+     "value": null,
+     "quote": null,
+     "verified": false,
+     "note": ""
+    },
+    "osa_symptoms": {
+     "value": true,
+     "quote": "He has mild excess daytime sleepiness manifested by dozing off during boring activities.",
+     "verified": true,
+     "note": ""
+    },
+    "cardiovascular_comorbidity": {
+     "value": true,
+     "quote": "CHIEF COMPLAINT:,  Rule out obstructive sleep apnea syndrome., Sample Patient is a pleasant, 61-year-old, obese, African-American male with a past medical history significant for hypertension, who presents to the Outpati",
+     "verified": true,
+     "note": ""
+    }
+   }
+  }
+ ]
+}

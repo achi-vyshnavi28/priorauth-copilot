@@ -1,0 +1,8 @@
+.env
+.cache/
+data/raw/
+*.sqlite3
+__pycache__/
+.pytest_cache/
+web/node_modules/
+web/dist/

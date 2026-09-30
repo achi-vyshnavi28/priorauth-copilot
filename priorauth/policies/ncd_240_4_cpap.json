@@ -1,0 +1,28 @@
+{
+  "id": "ncd_240_4_cpap",
+  "title": "Continuous Positive Airway Pressure (CPAP) Therapy For Obstructive Sleep Apnea (OSA)",
+  "ncd": "240.4",
+  "ncd_version": 3,
+  "effective_date": "2008-03-13",
+  "source": "https://api.coverage.cms.gov/v1/data/ncd/?ncdid=226&ncdver=3",
+  "rules_version": "2026.10.1",
+  "facts": {
+    "sleep_test_documented": {"type": "boolean", "description": "A completed diagnostic sleep test (attended polysomnogram or home sleep test) is documented; a planned or scheduled study does not count"},
+    "ahi": {"type": "number", "description": "Diagnostic apnea-hypopnea index (AHI) or respiratory disturbance index (RDI), overall events per hour. Not an arousal index, not a position-only value and not an AHI measured on CPAP during titration"},
+    "osa_symptoms": {"type": "boolean", "description": "Documented excessive daytime sleepiness, impaired cognition, mood disorders or insomnia"},
+    "cardiovascular_comorbidity": {"type": "boolean", "description": "Documented hypertension, ischemic heart disease or history of stroke"}
+  },
+  "criteria": [
+    {"id": "C1_SLEEP_TEST", "fact": "sleep_test_documented", "op": "==", "value": true,
+     "policy_text": "A positive diagnosis of OSA for the coverage of CPAP must include a clinical evaluation and a positive attended PSG performed in a sleep laboratory, or an unattended HST"},
+    {"id": "C2_AHI_15", "fact": "ahi", "op": ">=", "value": 15,
+     "policy_text": "AHI or RDI greater than or equal to 15 events per hour"},
+    {"id": "C3_AHI_5_14", "fact": "ahi", "op": "between", "value": [5, 14.999],
+     "policy_text": "AHI or RDI greater than or equal to 5 events and less than or equal to 14 events per hour"},
+    {"id": "C4_SYMPTOMS", "fact": "osa_symptoms", "op": "==", "value": true,
+     "policy_text": "with documented symptoms of excessive daytime sleepiness, impaired cognition, mood disorders or insomnia"},
+    {"id": "C5_CARDIOVASCULAR", "fact": "cardiovascular_comorbidity", "op": "==", "value": true,
+     "policy_text": "or documented hypertension, ischemic heart disease, or history of stroke"}
+  ],
+  "approve_when": {"all": ["C1_SLEEP_TEST", {"any": ["C2_AHI_15", {"all": ["C3_AHI_5_14", {"any": ["C4_SYMPTOMS", "C5_CARDIOVASCULAR"]}]}]}]}
+}

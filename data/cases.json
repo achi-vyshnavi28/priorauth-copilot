@@ -1,0 +1,476 @@
+[
+ {
+  "case_id": "MTS-0002",
+  "policy_id": "ncd_100_1_bariatric",
+  "service": "Laparoscopic Roux-en-Y gastric bypass (CPT 43644)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 2,
+   "specialty": "Bariatrics",
+   "sample_name": "Laparoscopic Gastric Bypass Consult - 1"
+  },
+  "note": "HISTORY OF PRESENT ILLNESS: , I have seen ABC today. He is a very pleasant gentleman who is 42 years old, 344 pounds. He is 5'9\". He has a BMI of 51. He has been overweight for ten years since the age of 33, at his highest he was 358 pounds, at his lowest 260. He is pursuing surgical attempts of weight loss to feel good, get healthy, and begin to exercise again. He wants to be able to exercise and play volleyball. Physically, he is sluggish. He gets tired quickly. He does not go out often. When he loses weight he always regains it and he gains back more than he lost. His biggest weight loss is 25 pounds and it was three months before he gained it back. He did six months of not drinking alcohol and not taking in many calories. He has been on multiple commercial weight loss programs including Slim Fast for one month one year ago and Atkin's Diet for one month two years ago., PAST MEDICAL HISTORY: , He has difficulty climbing stairs, difficulty with airline seats, tying shoes, used to public seating, difficulty walking, high cholesterol, and high blood pressure. He has asthma and difficulty walking two blocks or going eight to ten steps. He has sleep apnea and snoring. He is a diabetic, on medication. He has joint pain, knee pain, back pain, foot and ankle pain, leg and foot swelling. He has hemorrhoids., PAST SURGICAL HISTORY: , Includes orthopedic or knee surgery., SOCIAL HISTORY: , He is currently single. He drinks alcohol ten to twelve drinks a week, but does not drink five days a week and then will binge drink. He smokes one and a half pack a day for 15 years, but he has recently stopped smoking for the past two weeks., FAMILY HISTORY: , Obesity, heart disease, and diabetes. Family history is negative for hypertension and stroke., CURRENT MEDICATIONS:,  Include Diovan, Crestor, and Tricor., MISCELLANEOUS/EATING HISTORY: , He says a couple of friends of his have had heart attacks and have had died. He used to drink everyday, but stopped two years ago. He now only drinks on weekends. He is on his second week of Chantix, which is a medication to come off smoking completely. Eating, he eats bad food. He is single. He eats things like bacon, eggs, and cheese, cheeseburgers, fast food, eats four times a day, seven in the morning, at noon, 9 p.m., and 2 a.m. He currently weighs 344 pounds and 5'9\". His ideal body weight is 160 pounds. He is 184 pounds overweight. If he lost 70% of his excess body weight that would be 129 pounds and that would get him down to 215., REVIEW OF SYSTEMS: , Negative for head, neck, heart, lungs, GI, GU, orthopedic, or skin. He also is positive for gout. He denies chest pain, heart attack, coronary artery disease, congestive heart failure, arrhythmia, atrial fibrillation, pacemaker, pulmonary embolism, or CVA. He denies venous insufficiency or thrombophlebitis. Denies shortness of breath, COPD, or emphysema. Denies thyroid problems, hip pain, osteoarthritis, rheumatoid arthritis, GERD, hiatal hernia, peptic ulcer disease, gallstones, infected gallbladder, pancreatitis, fatty liver, hepatitis, rectal bleeding, polyps, incontinence of stool, urinary stress incontinence, or cancer. He denies cellulitis, pseudotumor cerebri, meningitis, or encephalitis., PHYSICAL EXAMINATION: , He is alert and oriented x 3. Cranial nerves II-XII are intact. Neck is soft and supple. Lungs: He has positive wheezing bilaterally. Heart is regular rhythm and rate. His abdomen is soft. Extremities: He has 1+ pitting edema., IMPRESSION/PLAN:,  I have explained to him the risks and potential complications of laparoscopic gastric bypass in detail and these include bleeding, infection, deep venous thrombosis, pulmonary embolism, leakage from the gastrojejuno-anastomosis, jejunojejuno-anastomosis, and possible bowel obstruction among other potential complications. He understands. He wants to proceed with workup and evaluation for laparoscopic Roux-en-Y gastric bypass. He will need to get a letter of approval from Dr. XYZ. He will need to see a nutritionist and mental health worker. He will need an upper endoscopy by either Dr. XYZ. He will need to go to Dr. XYZ as he previously had a sleep study. We will need another sleep study. He will need H. pylori testing, thyroid function tests, LFTs, glycosylated hemoglobin, and fasting blood sugar. After this is performed, we will submit him for insurance approval.",
+  "gold": {
+   "facts": {
+    "bmi": 51,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": true
+   },
+   "decision": "approve",
+   "why": "BMI 51; diabetes, hypertension, sleep apnea, high cholesterol; Slim Fast and Atkins with weight regain"
+  }
+ },
+ {
+  "case_id": "MTS-4417",
+  "policy_id": "ncd_100_1_bariatric",
+  "service": "Laparoscopic Roux-en-Y gastric bypass (CPT 43644)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 4417,
+   "specialty": "Consult - History and Phy.",
+   "sample_name": "Gastric Bypass Discussion - 1"
+  },
+  "note": "HISTORY OF PRESENT ILLNESS: , In short, the patient is a 55-year-old gentleman with long-standing morbid obesity, resistant to nonsurgical methods of weight loss with BMI of 69.7 with comorbidities of hypertension, atrial fibrillation, hyperlipidemia, possible sleep apnea, and also osteoarthritis of the lower extremities. He is also an ex-smoker. He is currently smoking and he is planning to quit and at least he should do this six to eight days before for multiple reasons including decreasing the DVT, PE rates and marginal ulcer problems after surgery, which will be discussed later on. , PHYSICAL EXAMINATION: , On physical examination today, he weighs 514.8 pounds, he has gained 21 pounds since the last visit with us. His pulse is 78, temperature is 97.5, blood pressure is 132/74. Lungs are clear. He is a pleasant gentleman with stigmata of supermorbid obesity expected of his size. Abdomen is soft, nontender. No incisions. No umbilical hernia, no groin hernia, has a large abdominal pannus. No hepatosplenomegaly. Lower extremities; no pedal edema. No calf tenderness. Deep tendon reflexes are normal. Lungs are clear. S1, S2 is heard. Regular rate and rhythm. , DISCUSSION:,  I had a long talk with the patient about laparoscopic gastric bypass possible open including risks, benefits, alternatives, need for long-term followup, need to adhere to dietary and exercise guidelines. I also explained to him complications including rare cases of death secondary to DVT, PE, leak, peritonitis, sepsis shock, multisystem organ failure, need for reoperations, need for endoscopy for bleeding or leak, operations which could be diagnostic laparoscopy, exploratory laparotomy, drainage procedure, gastrostomy, jejunostomy for feeding, bleeding requiring blood transfusion, myocardial infarction, pneumonia, atelectasis, respiratory failure requiring mechanical ventilation, rarely tracheostomy, rare cases of renal failure requiring dialysis, etc., were all discussed. , All these are going to be at high risk for this patient secondary to his supermorbid obese condition. , I also explained to him specific gastric bypass related complications including gastrojejunal stricture requiring endoscopic dilatation, marginal ulcer secondary to smoking or antiinflammatory drug intake, which can progress on to perforation or bleeding, small bowel obstruction secondary to internal hernia or adhesions, signs and symptoms of which are described, so the patient could alert us for earlier intervention, symptomatic gallstone formation during rapid weight loss, how to avoid it by taking ursodiol, which will be prescribed in the postoperative period. , Long-term complication of gastric bypass including hair loss, excess skin, multivitamin and mineral deficiencies, protein-calorie malnutrition, weight regain, weight plateauing, psychosocial and marital issues, addiction transfer, etc., were all discussed with the patient. The patient is at higher risk than usual set of patients secondary to his supermorbid obesity of BMI nearing 70 and also major cardiopulmonary and metabolic comorbidities. Smoking of course does not help and increase the risk for cardiopulmonary complications and is at increased risk for cardiac risk. He will be seen by cardiologist, pulmonologist. He will also undergo long Medifast dieting under our guidance, which is a very low-calorie diet to decrease the size of the liver and also to optimize his cardiopulmonary and metabolic comorbidities. He will also see a psychologist, nutritionist, and exercise physiologist in preparation for surgery for a multidisciplinary approach for short and long-term success. , Especially for him in view of his restricted mobility, supermorbid obesity status, and possibility of a pulmonary hypertension secondary to sleep apnea, he has been advised to have retrievable IVC filter and also will go home on Lovenox. He also needs to start exercising to increase his flexibility and muscle tone before surgery and also to start getting the habit of doing so. All these were discussed with the patient. The patient understands. He wants to go to surgery. All questions were answered. I will see him in few weeks before the planned date of surgery.",
+  "gold": {
+   "facts": {
+    "bmi": 69.7,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": true
+   },
+   "decision": "approve",
+   "why": "BMI 69.7; hypertension, hyperlipidemia, osteoarthritis; resistant to nonsurgical weight loss"
+  }
+ },
+ {
+  "case_id": "MTS-4561",
+  "policy_id": "ncd_100_1_bariatric",
+  "service": "Laparoscopic Roux-en-Y gastric bypass (CPT 43644)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 4561,
+   "specialty": "Consult - History and Phy.",
+   "sample_name": "Bariatric Consult - Surgical Weight Loss - 4"
+  },
+  "note": "HISTORY OF PRESENT ILLNESS:,  Ms. A is a 55-year-old female who presented to the Bariatric Surgery Service for consideration of laparoscopic Roux-en-Y gastric bypass. The patient states that she has been overweight for approximately 35 years and has tried multiple weight loss modalities in the past including Weight Watchers, NutriSystem, Jenny Craig, TOPS, cabbage diet, grape fruit diet, Slim-Fast, Richard Simmons, as well as over-the-counter measures without any long-term sustainable weight loss. At the time of presentation to the practice, she is 5 feet 6 inches tall with a weight of 285.4 pounds and a body mass index of 46. She has obesity-related comorbidities, which includes hypertension and hypercholesterolemia., PAST MEDICAL HISTORY:,  Significant for hypertension, for which the patient takes Norvasc and Lopressor for. She also suffers from high cholesterol and is on lovastatin for this. She has depression, for which she takes citalopram. She also stated that she had a DVT in the past prior to her hysterectomy. She also suffers from thyroid disease in the past though this is unclear, the nature of this., PAST SURGICAL HISTORY: , Significant for cholecystectomy in 2008 for gallstones. She also had a hysterectomy in 1994 secondary to hemorrhage. The patient denies any other abdominal surgeries., MEDICATIONS: , Norvasc 10 mg p.o. daily, Lopressor tartrate 50 mg p.o. b.i.d., lovastatin 10 mg p.o. at bedtime, citalopram 10 mg p.o. daily, aspirin 500 mg three times a day, which is currently stopped, vitamin D, Premarin 0.3 mg one tablet p.o. daily, currently stopped, omega-3 fatty acids, and vitamin D 50, 000 units q. weekly., ALLERGIES: , The patient denies allergies to medications and to latex., SOCIAL HISTORY: , The patient is a homemaker. She is married, with 2 children aged 22 and 28. She is a lifelong nonsmoker and nondrinker., FAMILY HISTORY: , Significant for high blood pressure and diabetes as well as cancer on her father side. He did pass away from congestive heart failure. Mother suffers from high blood pressure, cancer, and diabetes. Her mother has passed away secondary to cancer. She has two brothers one passed away from brain cancer., REVIEW OF SYSTEMS: , Significant for ankle swelling. The patient also wears glasses for vision and has dentures. She does complain of shortness of breath with exertion. She also suffers from hemorrhoids and frequent urination at night as well as weightbearing joint pain. The patient denies ulcerative colitis, Crohn disease, bleeding diathesis, liver disease, or kidney disease. She denies chest pain, cardiac disease, cancer, and stroke., PHYSICAL EXAMINATION: , The patient is a well-nourished, well-developed female, in no distress. Eye Exam: Pupils equal and reactive to light. Extraocular motions are intact. Neck Exam: No cervical lymphadenopathy. Midline trachea. No carotid bruits. Nonpalpable thyroid. Neuro Exam: Gross motor strength in the upper and lower extremities, equal bilaterally with no focal neuro deficits noted. Lung Exam: Clear breath sounds without rhonchi or wheezes. Cardiac Exam: Regular rate and rhythm without murmur or bruits. Abdominal Exam: Positive bowel sounds. Soft, nontender, obese, and nondistended abdomen. Lap cholecystectomy scars noted. No obvious hernias. No organomegaly appreciated. Lower extremity Exam: Edema 1+. Dorsalis pedis pulses 2+., ASSESSMENT: , The patient is a 55-year-old female with a body mass index of 46, suffering from obesity-related comorbidities including hypertension and hypercholesterolemia, who presents to the practice for consideration of gastric bypass surgery. The patient appears to be an excellent candidate for surgery and would benefit greatly from surgical weight loss in the management of her obesity-related comorbidities., PLAN: , In preparation for surgery, we will obtain the usual baseline laboratory values including baseline vitamin levels. I recommended the patient undergo an upper GI series prior to surgery due to find her upper GI anatomy. Also the patient will meet with the dietitian and psychologist as per her usual routine. I have recommended approximately six to eight weeks of Medifast for the patient to obtain a 10% preoperative weight loss in preparation for surgery.",
+  "gold": {
+   "facts": {
+    "bmi": 46,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": true
+   },
+   "decision": "approve",
+   "why": "BMI 46; hypertension, hypercholesterolemia; Weight Watchers, NutriSystem, Jenny Craig and others without sustained loss"
+  }
+ },
+ {
+  "case_id": "MTS-4414",
+  "policy_id": "ncd_100_1_bariatric",
+  "service": "Laparoscopic Roux-en-Y gastric bypass (CPT 43644)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 4414,
+   "specialty": "Consult - History and Phy.",
+   "sample_name": "Gastric Bypass Discussion - 2"
+  },
+  "note": "HISTORY: , The patient is scheduled for laparoscopic gastric bypass. The patient has been earlier seen by Dr. X, her physician. She has been referred to us from Family Practice. In short, she is a 33-year-old lady with a BMI of 43, otherwise healthy with unsuccessful nonsurgical methods of weight loss. , She was on laparoscopic gastric bypass for weight loss. , She meets the National Institute of Health Criteria. She is very well educated and motivated and has no major medical contraindications for the procedure., PHYSICAL EXAMINATION:,  On physical examination today, she weighs 216 pounds with a BMI of 43.5, pulse is 96, temperature is 97.6, blood pressure is 122/80. Lungs are clear. Abdomen is soft, nontender. There is stigmata for morbid obesity. She has cesarean section scars in the lower abdomen with no herniation. , DISCUSSION: , I had a long talk with the patient about laparoscopic gastric bypass, possible open including risks, benefits, alternatives, need for long-term followup, need to adhere to dietary and exercise guidelines. I also explained to her complications including rare cases of death secondary to DVT, PE, leak , peritonitis, sepsis, shock, multisystem organ failure, need for re-operation including for leak or bleeding, gastrostomy or jejunostomy for feeding, rare case of respiratory failure requiring mechanical ventilation, etc., with myocardial infarction, pneumonia, atelectasis in the postoperative period were also discussed. , Short-term complications of gastric bypass including gastrojejunal stricture requiring endoscopic dilatation, marginal ulcer secondary to smoking or anti-inflammatory drug intake which can progress on to perforation or bleeding, small bowel obstruction secondary to internal hernia or adhesions, signs and symptoms of which were discussed. The patient would alert us for earlier intervention. Symptomatic gallstone formation secondary to rapid weight loss were also discussed. How to avoid it by taking ursodiol were also discussed. Long-term complications of gastric bypass including hair loss, excess skin, multivitamin and mineral deficiencies, protein-calorie malnutrition, weight regain, weight plateauing, need for major lifestyle and exercise and habit changes, avoiding pregnancy in the first two years, etc., were all stressed. The patient understands. She wants to go to surgery. , In preparation of surgery, she will undergo very low-calorie diet through Medifast to decrease the size of the liver to make laparoscopic approach more successful and also to optimize her cardiopulmonary and metabolic comorbidities. She will also see a psychologist, nutritionist, and exercise physiologist for a multidisciplinary effort for short and long-term success for weight loss surgery. I will see her two weeks before the plan of surgery for further discussion and any other questions at that point of time.",
+  "gold": {
+   "facts": {
+    "bmi": [
+     43,
+     43.5
+    ],
+    "obesity_comorbidity": false,
+    "prior_medical_treatment_failed": true
+   },
+   "decision": "pend",
+   "why": "BMI 43.5 but 'otherwise healthy': no obesity-related comorbidity documented"
+  }
+ },
+ {
+  "case_id": "MTS-0013",
+  "policy_id": "ncd_100_1_bariatric",
+  "service": "Laparoscopic Roux-en-Y gastric bypass (CPT 43644)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 13,
+   "specialty": "Bariatrics",
+   "sample_name": "Gastric Bypass Discussion - 3"
+  },
+  "note": "PAST MEDICAL HISTORY:,  Significant for hypertension. The patient takes hydrochlorothiazide for this. She also suffers from high cholesterol and takes Crestor. She also has dry eyes and uses Restasis for this. She denies liver disease, kidney disease, cirrhosis, hepatitis, diabetes mellitus, thyroid disease, bleeding disorders, prior DVT, HIV and gout. She also denies cardiac disease and prior history of cancer., PAST SURGICAL HISTORY: , Significant for tubal ligation in 1993. She had a hysterectomy done in 2000 and a gallbladder resection done in 2002., MEDICATIONS: , Crestor 20 mg p.o. daily, hydrochlorothiazide 20 mg p.o. daily, Veramist spray 27.5 mcg daily, Restasis twice a day and ibuprofen two to three times a day., ALLERGIES TO MEDICATIONS: , Bactrim which causes a rash. The patient denies latex allergy., SOCIAL HISTORY: , The patient is a life long nonsmoker. She only drinks socially one to two drinks a month. She is employed as a manager at the New York department of taxation. She is married with four children., FAMILY HISTORY: , Significant for type II diabetes on her mother's side as well as liver and heart failure. She has one sibling that suffers from high cholesterol and high triglycerides., REVIEW OF SYSTEMS: , Positive for hot flashes. She also complains about snoring and occasional slight asthma. She does complain about peripheral ankle swelling and heartburn. She also gives a history of hemorrhoids and bladder infections in the past. She has weight bearing joint pain as well as low back degenerating discs. She denies obstructive sleep apnea, kidney stones, bloody bowel movements, ulcerative colitis, Crohn's disease, dark tarry stools and melena., PHYSICAL EXAMINATION: , On examination temperature is 97.7, pulse 84, blood pressure 126/80, respiratory rate was 20. Well nourished, well developed in no distress. Eye exam, pupils equal round and reactive to light. Extraocular motions intact. Neuro exam deep tendon reflexes 1+ in the lower extremities. No focal neuro deficits noted. Neck exam nonpalpable thyroid, midline trachea, no cervical lymphadenopathy, no carotid bruit. Lung exam clear breath sounds throughout without rhonchi or wheezes however diminished. Cardiac exam regular rate and rhythm without murmur or bruit. Abdominal exam positive bowel sounds, soft, nontender, obese, nondistended abdomen. No palpable tenderness. No right upper quadrant tenderness. No organomegaly appreciated. No obvious hernias noted. Lower extremity exam +1 edema noted. Positive dorsalis pedis pulses., ASSESSMENT: , The patient is a 56-year-old female who presents to the bariatric surgery service with a body mass index of 41 with obesity related comorbidities. The patient is interested in gastric bypass surgery. The patient appears to be an excellent candidate and would benefit greatly in the management of her comorbidities., PLAN: , In preparation for surgery will obtain the usual baseline laboratory values including baseline vitamin levels. Will proceed with our usual work up with an upper GI series as well as consultations with the dietician and the psychologist preoperatively. I have recommended six weeks of Medifast for the patient to obtain a 10% preoperative weight loss.",
+  "gold": {
+   "facts": {
+    "bmi": 41,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": null
+   },
+   "decision": "pend",
+   "why": "BMI 41 with hypertension and high cholesterol, but no history of prior medical weight-loss treatment"
+  }
+ },
+ {
+  "case_id": "MTS-4566",
+  "policy_id": "ncd_100_1_bariatric",
+  "service": "Laparoscopic Roux-en-Y gastric bypass (CPT 43644)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 4566,
+   "specialty": "Consult - History and Phy.",
+   "sample_name": "Bariatric Consult - Surgical Weight Loss - 2"
+  },
+  "note": "PAST MEDICAL HISTORY: , She had a negative stress test four to five years ago. She gets short of breath in walking about 30 steps. She has had non-insulin dependent diabetes for about eight years now. She has a left knee arthritis and history of hemorrhoids., PAST SURGICAL HISTORY: , Pertinent for laparoscopic cholecystectomy, tonsillectomy, left knee surgery, and right breast lumpectomy., PSYCHOLOGICAL HISTORY: , Negative except that she was rehabilitated for alcohol addiction in 1990., SOCIAL HISTORY: , The patient is married. She is an office manager for a gravel company. Her spouse is also overweight. She drinks on a weekly basis and she smokes, about two packs of cigarettes over a week's period of time. She is doing this for about 35 years., FAMILY HISTORY: , Diabetes and hypertension., MEDICATIONS:,  Include Colestid 1 g daily, Actos 30 mg daily, Amaryl 2 mg daily, Soma, and meloxicam for her back pain., ALLERGIES:,  She has no allergies; however, she does get tachycardic with caffeine, Sudafed, or phenylpropanolamine., REVIEW OF SYSTEMS: , Otherwise, negative., PHYSICAL EXAM: , This is a pleasant female in no acute distress. Alert and oriented x 3. HEENT: Normocephalic, atraumatic. Extraocular muscles intact, nonicteric sclerae. Chest is clear. Abdomen is obese, soft, nontender and nondistended. Extremities show no edema, clubbing or cyanosis., ASSESSMENT/PLAN: , This is a 51-year-old female with a BMI of 43 who is interested in the Lap-Band as opposed to gastric bypass. ABC will be asking for a letter of medical necessity from XYZ. She will also need an EKG and clearance for surgery. She will also see my nutritionist and social worker and once this is completed, we will submit her to her insurance company for approval.",
+  "gold": {
+   "facts": {
+    "bmi": 43,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": null
+   },
+   "decision": "pend",
+   "why": "BMI 43 with type 2 diabetes and knee arthritis; prior medical treatment not documented"
+  }
+ },
+ {
+  "case_id": "MTS-4567",
+  "policy_id": "ncd_100_1_bariatric",
+  "service": "Laparoscopic Roux-en-Y gastric bypass (CPT 43644)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 4567,
+   "specialty": "Consult - History and Phy.",
+   "sample_name": "Bariatric Consult - Surgical Weight Loss - 1"
+  },
+  "note": "PAST MEDICAL HISTORY: , She has a history of hypertension and shortness of breath., PAST SURGICAL HISTORY: , Pertinent for cholecystectomy., PSYCHOLOGICAL HISTORY: , Negative., SOCIAL HISTORY: , She is single. She drinks alcohol once a week. She does not smoke., FAMILY HISTORY: , Pertinent for obesity and hypertension., MEDICATIONS: , Include Topamax 100 mg twice daily, Zoloft 100 mg twice daily, Abilify 5 mg daily, Motrin 800 mg daily, and a multivitamin., ALLERGIES: , She has no known drug allergies., REVIEW OF SYSTEMS: , Negative., PHYSICAL EXAM: , This is a pleasant female in no acute distress. Alert and oriented x 3. HEENT: Normocephalic, atraumatic. Extraocular muscles intact, nonicteric sclerae. Chest is clear to auscultation bilaterally. Cardiovascular is normal sinus rhythm. Abdomen is obese, soft, nontender and nondistended. Extremities show no edema, clubbing or cyanosis., ASSESSMENT/PLAN: , This is a 34-year-old female with a BMI of 43 who is interested in surgical weight via the gastric bypass as opposed to Lap-Band. ABC will be asking for a letter of medical necessity from Dr. XYZ. She will also see my nutritionist and social worker and have an upper endoscopy. Once this is completed, we will submit her to her insurance company for approval.",
+  "gold": {
+   "facts": {
+    "bmi": 43,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": null
+   },
+   "decision": "pend",
+   "why": "BMI 43 with hypertension; prior medical treatment not documented"
+  }
+ },
+ {
+  "case_id": "MTS-3942",
+  "policy_id": "ncd_100_1_bariatric",
+  "service": "Laparoscopic Roux-en-Y gastric bypass (CPT 43644)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 3942,
+   "specialty": "Discharge Summary",
+   "sample_name": "Discharge Summary - Gastric Bypass"
+  },
+  "note": "ADMISSION DIAGNOSIS:,  Morbid obesity. BMI is 51., DISCHARGE DIAGNOSIS: , Morbid obesity. BMI is 51., PROCEDURE: , Laparoscopic gastric bypass., SERVICE: , Surgery., CONSULT: , Anesthesia and pain., HISTORY OF PRESENT ILLNESS: , Ms. A is a 27-year-old woman, who suffered from morbid obesity for many years. She has made multiple attempts at nonsurgical weight loss without success. She underwent a preoperative workup and clearance for gastric bypass and was found to be an appropriate candidate. She underwent her procedure., HOSPITAL COURSE: , Ms. A underwent her procedure. She tolerated without difficulty. She was admitted to the floor post procedure. Her postoperative course has been unremarkable. On postoperative day 1, she was hemodynamically stable, afebrile, normal labs, and she was started on a clear liquid diet, which she has tolerated without difficulty. She has ambulated and had no complaints. Today, on postoperative day 2, the patient continues to do well. Pain controlled with p.o. pain medicine, ambulating without difficulty, tolerating a liquid diet. At this point, it is felt that she is stable for discharge. Her drain was discontinued., DISCHARGE INSTRUCTIONS:,  Liquid diet x1 week, then advance to pureed and soft as tolerated. No heavy lifting, greater than 10 pounds x4 weeks. The patient is instructed to not engage in any strenuous activity, but maintain mobility. No driving for 1 to 2 weeks. She must be able to stop in an emergency and be off narcotic pain medicine. She may shower. She needs to keep her wounds clean and dry. She needs to follow up in my office in 1 week for postoperative evaluation. She is instructed to call for any problems of shortness of breath, chest pain, calf pain, temperature greater than 101.5, any redness, swelling, or foul smelling drainage from her wounds, intractable nausea, vomiting, and abdominal pain. She is instructed just to resume her discharge medications., DISCHARGE MEDICATIONS:,  She was given a scripts for Lortab Elixir, Flexeril, ursodiol, and Colace.",
+  "gold": {
+   "facts": {
+    "bmi": 51,
+    "obesity_comorbidity": null,
+    "prior_medical_treatment_failed": true
+   },
+   "decision": "pend",
+   "why": "BMI 51 and failed nonsurgical attempts; no obesity-related comorbidity named"
+  }
+ },
+ {
+  "case_id": "MTS-0001",
+  "policy_id": "ncd_100_1_bariatric",
+  "service": "Laparoscopic Roux-en-Y gastric bypass (CPT 43644)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 1,
+   "specialty": "Bariatrics",
+   "sample_name": "Laparoscopic Gastric Bypass Consult - 2"
+  },
+  "note": "PAST MEDICAL HISTORY:, He has difficulty climbing stairs, difficulty with airline seats, tying shoes, used to public seating, and lifting objects off the floor. He exercises three times a week at home and does cardio. He has difficulty walking two blocks or five flights of stairs. Difficulty with snoring. He has muscle and joint pains including knee pain, back pain, foot and ankle pain, and swelling. He has gastroesophageal reflux disease., PAST SURGICAL HISTORY:, Includes reconstructive surgery on his right hand 13 years ago. , SOCIAL HISTORY:, He is currently single. He has about ten drinks a year. He had smoked significantly up until several months ago. He now smokes less than three cigarettes a day., FAMILY HISTORY:, Heart disease in both grandfathers, grandmother with stroke, and a grandmother with diabetes. Denies obesity and hypertension in other family members., CURRENT MEDICATIONS:, None., ALLERGIES:,  He is allergic to Penicillin., MISCELLANEOUS/EATING HISTORY:, He has been going to support groups for seven months with Lynn Holmberg in Greenwich and he is from Eastchester, New York and he feels that we are the appropriate program. He had a poor experience with the Greenwich program. Eating history, he is not an emotional eater. Does not like sweets. He likes big portions and carbohydrates. He likes chicken and not steak. He currently weighs 312 pounds. Ideal body weight would be 170 pounds. He is 142 pounds overweight. If , he lost 60% of his excess body weight that would be 84 pounds and he should weigh about 228., REVIEW OF SYSTEMS: , Negative for head, neck, heart, lungs, GI, GU, orthopedic, and skin. Specifically denies chest pain, heart attack, coronary artery disease, congestive heart failure, arrhythmia, atrial fibrillation, pacemaker, high cholesterol, pulmonary embolism, high blood pressure, CVA, venous insufficiency, thrombophlebitis, asthma, shortness of breath, COPD, emphysema, sleep apnea, diabetes, leg and foot swelling, osteoarthritis, rheumatoid arthritis, hiatal hernia, peptic ulcer disease, gallstones, infected gallbladder, pancreatitis, fatty liver, hepatitis, hemorrhoids, rectal bleeding, polyps, incontinence of stool, urinary stress incontinence, or cancer. Denies cellulitis, pseudotumor cerebri, meningitis, or encephalitis., PHYSICAL EXAMINATION:, He is alert and oriented x 3. Cranial nerves II-XII are intact. Afebrile. Vital Signs are stable.",
+  "gold": {
+   "facts": {
+    "bmi": null,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": null
+   },
+   "decision": "pend",
+   "why": "Weight 312 lb but no height or BMI; GERD; prior medical treatment unclear"
+  }
+ },
+ {
+  "case_id": "MTS-0010",
+  "policy_id": "ncd_100_1_bariatric",
+  "service": "Laparoscopic Roux-en-Y gastric bypass (CPT 43644)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 10,
+   "specialty": "Bariatrics",
+   "sample_name": "Laparoscopic Gastric Bypass - 1"
+  },
+  "note": "PREOPERATIVE DIAGNOSIS: , Morbid obesity. , POSTOPERATIVE DIAGNOSIS: , Morbid obesity. , PROCEDURE:,  Laparoscopic Roux-en-Y gastric bypass, antecolic, antegastric with 25-mm EEA anastamosis, esophagogastroduodenoscopy. , ANESTHESIA: , General with endotracheal intubation. , INDICATIONS FOR PROCEDURE: , This is a 50-year-old male who has been overweight for many years and has tried multiple different weight loss diets and programs. The patient has now begun to have comorbidities related to the obesity. The patient has attended our bariatric seminar and met with our dietician and psychologist. The patient has read through our comprehensive handout and understands the risks and benefits of bypass surgery as evidenced by the signing of our consent form., PROCEDURE IN DETAIL: , The risks and benefits were explained to the patient. Consent was obtained. The patient was taken to the operating room and placed supine on the operating room table. General anesthesia was administered with endotracheal intubation. A Foley catheter was placed for bladder decompression. All pressure points were carefully padded, and sequential compression devices were placed on the legs. The abdomen was prepped and draped in standard, sterile, surgical fashion. Marcaine was injected into the umbilicus.",
+  "gold": {
+   "facts": {
+    "bmi": null,
+    "obesity_comorbidity": true,
+    "prior_medical_treatment_failed": true
+   },
+   "decision": "pend",
+   "why": "Comorbidities and multiple failed diets, but no BMI"
+  }
+ },
+ {
+  "case_id": "MTS-0005",
+  "policy_id": "ncd_100_1_bariatric",
+  "service": "Laparoscopic Roux-en-Y gastric bypass (CPT 43644)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 5,
+   "specialty": "Bariatrics",
+   "sample_name": "Laparoscopic Gastric Bypass"
+  },
+  "note": "PREOPERATIVE DIAGNOSIS: , Morbid obesity., POSTOPERATIVE DIAGNOSIS: , Morbid obesity., PROCEDURE: , Laparoscopic antecolic antegastric Roux-en-Y gastric bypass with EEA anastomosis., ANESTHESIA: , General with endotracheal intubation., INDICATION FOR PROCEDURE: , This is a 30-year-old female, who has been overweight for many years. She has tried many different diets, but is unsuccessful. She has been to our Bariatric Surgery Seminar, received some handouts, and signed the consent. The risks and benefits of the procedure have been explained to the patient., PROCEDURE IN DETAIL: , The patient was taken to the operating room and placed supine on the operating room table. All pressure points were carefully padded. She was given general anesthesia with endotracheal intubation. SCD stockings were placed on both legs. Foley catheter was placed for bladder decompression. The abdomen was then prepped and draped in standard sterile surgical fashion. Marcaine was then injected through umbilicus. A small incision was made. A Veress needle was introduced into the abdomen. CO2 insufflation was done to a maximum pressure of 15 mmHg. A 12-mm VersaStep port was placed through the umbilicus. I then placed a 5-mm port just anterior to the midaxillary line and just subcostal on the right side. I placed another 5-mm port in the midclavicular line just subcostal on the right side, a few centimeters below and medial to that, I placed a 12-mm VersaStep port. On the left side, just anterior to the midaxillary line and just subcostal, I placed a 5-mm port. A few centimeters below and medial to that, I placed a 15-mm port. I began by lifting up the omentum and identifying the transverse colon and lifting that up and thereby identifying my ligament of Treitz. I ran the small bowel down approximately 40 cm and divided the small bowel with a white load GIA stapler. I then divided the mesentery all the way down to the base of the mesentery with a LigaSure device. I then ran the distal bowel down, approximately 100 cm, and at 100 cm, I made a hole at the antimesenteric portion of the Roux limb and a hole in the antimesenteric portion of the duodenogastric limb, and I passed a 45 white load stapler and fired a stapler creating a side-to-side anastomosis. I reapproximated the edges of the defect. I lifted it up and stapled across it with another white load stapler. I then closed the mesenteric defect with interrupted Surgidac sutures. I divided the omentum all the way down to the colon in order to create a passageway for my small bowel to go antecolic. I then put the patient in reverse Trendelenburg. I placed a liver retractor, identified, and dissected the angle of His. I then dissected on the lesser curve, approximately 2.5 cm below the gastroesophageal junction, and got into a lesser space. I fired transversely across the stomach with a 45 blue load stapler. I then used two fires of the 60 blue load with SeamGuard to go up into my angle of His, thereby creating my gastric pouch. I then made a hole at the base of the gastric pouch and had Anesthesia remove the bougie and place the OG tube connected to the anvil. I pulled the anvil into place, and I then opened up my 15-mm port site and passed my EEA stapler. I passed that in the end of my Roux limb and had the spike come out antimesenteric. I joined the spike with the anvil and fired a stapler creating an end-to-side anastomosis, then divided across the redundant portion of my Roux limb with a white load GI stapler, and removed it with an Endocatch bag. I put some additional 2-0 Vicryl sutures in the anastomosis for further security. I then placed a bowel clamp across the bowel. I went above and passed an EGD scope into the mouth down to the esophagus and into the gastric pouch. I distended gastric pouch with air. There was no air leak seen. I could pass the scope easily through the anastomosis. There was no bleeding seen through the scope. We closed the 15-mm port site with interrupted 0 Vicryl suture utilizing Carter-Thomason. I copiously irrigated out that incision with about 2 L of saline. I then closed the skin of all incisions with running Monocryl. Sponge, instrument, and needle counts were correct at the end of the case. The patient tolerated the procedure well without any complications.",
+  "gold": {
+   "facts": {
+    "bmi": null,
+    "obesity_comorbidity": null,
+    "prior_medical_treatment_failed": true
+   },
+   "decision": "pend",
+   "why": "Many unsuccessful diets; no BMI and no comorbidity documented"
+  }
+ },
+ {
+  "case_id": "MTS-0015",
+  "policy_id": "ncd_100_1_bariatric",
+  "service": "Laparoscopic Roux-en-Y gastric bypass (CPT 43644)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 15,
+   "specialty": "Bariatrics",
+   "sample_name": "Laparoscopic Gastric Banding - Preop Visit"
+  },
+  "note": "HISTORY OF PRESENT ILLNESS: , I have seen ABC today for her preoperative visit for weight management. I have explained to her the need for Optifast for weight loss prior to these procedures to make it safer because of the large size of her liver. She understands this., IMPRESSION/PLAN:, We are going to put her on two weeks of Optifast at around 900 calories. I have also explained the risks and potential complications of laparoscopic cholecystectomy to her in detail including bleeding, infection, deep venous thrombosis, pulmonary embolism, injury to the small intestine, stomach, liver, leak from the cystic duct, common bile duct, and possible need for ERCP and further surgery. This surgery is going to be planned for October 6. This is for cholelithiasis prior to her Lap-Banding procedure., I have also reviewed with her the risks and potential complications of laparoscopic gastric banding including bleeding, infection, deep venous thrombosis, pulmonary embolism, slippage of the band, erosion of the band, injury to the esophagus, stomach, small intestine, large intestine, spleen, liver, injury to the band, port, or tubing necessitating replacement of the band, port, or tubing among other potential complications and she understands. We are going to proceed for laparoscopic gastric banding. I have reviewed her entire chart in detail. I have also gone over with her the Fairfield County Bariatrics consent form for banding and all the risks. She has also signed the St. Vincent's Hospital consent form for Lap-Banding. She has taken the preoperative quiz for banding. She has signed the preop and postop instructions, and understands them and we reviewed them. She has taken the quiz and done fairly well. We have reviewed with her any potential other issues and I have answered her questions. She is planned for surgical intervention.,",
+  "gold": {
+   "facts": {
+    "bmi": null,
+    "obesity_comorbidity": null,
+    "prior_medical_treatment_failed": null
+   },
+   "decision": "pend",
+   "why": "Pre-op visit note with none of the criteria documented"
+  }
+ },
+ {
+  "case_id": "MTS-1399",
+  "policy_id": "ncd_100_1_bariatric",
+  "service": "Laparoscopic Roux-en-Y gastric bypass (CPT 43644)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 1399,
+   "specialty": "SOAP / Chart / Progress Notes",
+   "sample_name": "Gastric Bypass - Preop Eval"
+  },
+  "note": "REASON FOR VISIT:,  Preop evaluation regarding gastric bypass surgery., The patient has gone through the evaluation process and has been cleared from psychological, nutritional, and cardiac standpoint, also had great success on the preop Medifast diet., PHYSICAL EXAMINATION: , The patient is alert and oriented x3. Temperature of 97.9, pulse of 76, blood pressure of 114/74, weight of 247.4 pounds. Abdomen: Soft, nontender, and nondistended., ASSESSMENT AND PLAN:,  The patient is currently in stable condition with morbid obesity, scheduled for gastric bypass surgery in less than two weeks. Risks and benefits of the procedure were reiterated with the patient and significant other and mother, which included but not limited to death, pulmonary embolism, anastomotic leak, reoperation, prolonged hospitalization, stricture, small bowel obstruction, bleeding, and infection. Questions regarding hospital course and recovery were addressed. We will continue on the Medifast diet until the time of surgery and cleared for surgery.",
+  "gold": {
+   "facts": {
+    "bmi": null,
+    "obesity_comorbidity": null,
+    "prior_medical_treatment_failed": null
+   },
+   "decision": "pend",
+   "why": "Weight 247.4 lb, no BMI; success on pre-op Medifast is not a failed prior treatment"
+  }
+ },
+ {
+  "case_id": "MTS-1462",
+  "policy_id": "ncd_240_4_cpap",
+  "service": "CPAP device for obstructive sleep apnea (HCPCS E0601)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 1462,
+   "specialty": "Sleep Medicine",
+   "sample_name": "Overnight Polysomnogram"
+  },
+  "note": "The patient underwent an overnight polysomnogram on 09/22/06 and the details of the polysomnographic study are reported separately. The highlights of the study include the following:, A. Obstructive apneas and hypopneas were identified with an overall apnea-hypopnea index of 15.2 events per hour in the supine position. All events occurred in the supine position and were more prominent during stage REM sleep. Minimum oxygen saturation was 88%., B. Periodic limb movements in sleep were identified with an overall index of 32 events per hour of sleep., C. The patient's sleep efficiency was reduced to 89.2%. There was significant sleep fragmentation due to the obstructive apneas and hypopneas as well as due to the periodic limb movements in sleep disorder. The patient did not achieve any stage III/IV sleep and stage REM sleep was diminished at 12.7%. There was a corresponding increase in stage I sleep and stage II sleep at 10.8% and 65.7% respectively., DIAGNOSTIC IMPRESSION:, 1. Obstructive sleep apnea syndrome, supine position dependent, moderate (780.53-0)., 2. Periodic limb movement in sleep disorder, moderate (780.53-4)., CASE DISCUSSION: , Thank you once again for allowing us to participate in the care of the patient here at the Sleep Clinic., The patient exhibits obstructive sleep apnea, a condition associated with increased risk of myocardial infarction, stroke and sudden death. Furthermore, patients with this condition are susceptible to excessive daytime sleepiness while driving and there is a higher incidence of automobile accident. The patient should be warned with regards to these possibilities., Patients with this condition can be successfully treated with nasal CPAP (continuous positive airway pressure), so that the patient should return to the sleep laboratory for repeat overnight polysomnogram with CPAP titration. The sleep laboratory if necessary can introduce the patient to the proper use of the CPAP equipment and to determine a necessary pressure to prevent apneas., It is reported that the patient undergo careful ENT/maxillofacial evaluation by a physician familiar with sleep disorders. Anatomical abnormalities in the upper airway often cause or predispose to this condition. Surgical intervention may be helpful or necessary if such conditions exist. Alternatively, ________ may be of benefit in some patients depending upon the anatomical abnormalities., Obstructive sleep apnea is worsened by obesity. The patient should be encouraged to lose weight. Patients usually lose weight more effectively when involved in a behavioral weight loss program. It is sometimes difficult for patients to lose weight until the OSA is adequately treated because excessive daytime sleepiness results in decreased physical activity in the daytime., Patient may have worsening obstructive sleep apnea by nasal airway obstruction and nasal congestion. If present, these conditions should be treated. In addition, any home allergens such as pets, down bedding or other factors should be removed from the sleep environment., The patient should be informed that obstructive sleep apnea may be worsened by the use of alcohol or sedative medications particularly taken in the evening. Therefore, the evening use of sedative medications and alcohol are to be avoided., The patient also exhibits periodic limb movements in sleep disorder. This may require treatment. However, it will be appropriate to obtain the repeat overnight polysomnogram with CPAP titration to see if the PLMS continues to be troublesome. If so, treatment recommendations will be made.",
+  "gold": {
+   "facts": {
+    "sleep_test_documented": true,
+    "ahi": 15.2,
+    "osa_symptoms": null,
+    "cardiovascular_comorbidity": null
+   },
+   "decision": "approve",
+   "why": "Overnight polysomnogram, apnea-hypopnea index 15.2 events per hour"
+  }
+ },
+ {
+  "case_id": "MTS-1468",
+  "policy_id": "ncd_240_4_cpap",
+  "service": "CPAP device for obstructive sleep apnea (HCPCS E0601)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 1468,
+   "specialty": "Sleep Medicine",
+   "sample_name": "Polysomnography"
+  },
+  "note": "PROCEDURE:,  The test was performed in an observed hospital laboratory. The patient was monitored for EEG, EOG, jaw and leg EMG, thoracoabdominal impedance, oral/nasal thermistors, EKG, and oximetry. The test was performed due to suspicion of sleep apnea and poor sleep quality with frequent awakenings., The patient's height 6 feet, 1 inch and his weight 260 pounds., DETAILS: , Total sleep period 377 minutes, total sleep time 241 minutes, sleep onset 33 minutes, and sleep efficiency 64%. Stage I 9%, stage II 59%, stage III 23%, and REM stage 9%. There were 306 apneas and hypopnea with apnea/hypopnea index 76. Out of them 109 apneas and 197 hypopneas. There were 40 arousals with index 9.9. Mean oxygen saturation 91% with lowest oxygen saturation 70%. A 19% of sleep time was spent with oxygen saturation less than 90% and 1% with less than 80%. Oxygen saturation during awake 95%. The patient slept in supine left side and right side, no preferred body position identified for apneas. Average pulse 85 BPMs with lowest 61 and highest 116 BPMs. No significant snoring throughout the study. No significant leg jerk movement., SUMMARY: , Severe obstructive sleep apnea with apnea/hypopnea index 76 and respiratory disturbance index 9.9. Suggest weight loss, thyroid function evaluation, and CPAP titration study.",
+  "gold": {
+   "facts": {
+    "sleep_test_documented": true,
+    "ahi": 76,
+    "osa_symptoms": true,
+    "cardiovascular_comorbidity": null
+   },
+   "decision": "approve",
+   "why": "Polysomnogram AHI 76 (the 'respiratory disturbance index 9.9' in the same note is really the arousal index)"
+  }
+ },
+ {
+  "case_id": "MTS-1465",
+  "policy_id": "ncd_240_4_cpap",
+  "service": "CPAP device for obstructive sleep apnea (HCPCS E0601)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 1465,
+   "specialty": "Sleep Medicine",
+   "sample_name": "Sleep Study Interpretation"
+  },
+  "note": "PROCEDURE:, Sleep study., CLINICAL INFORMATION:, This patient is a 56-year-old gentleman who had symptoms of obstructive sleep apnea with snoring, hypertension. The test was done 01/24/06. The patient weighed 191 pounds, five feet, seven inches tall., SLEEP QUESTIONNAIRE:, According to the patient's own estimate, the patient took about 15 minutes to fall asleep, slept for six and a half hours, did have some dreams. Did not wake up and the sleep was less refreshing. He was sleepy in the morning., STUDY PROTOCOL:, An all night polysomnogram was recorded with a Compumedics E Series digital polysomnograph. After the scalp was prepared, Ag/AgCl electrodes were applied to the scalp according to the International 10-20 System. EEG was monitored from C4-A1, C3-A2, O2-A1 and O2-A1. EOG and EMG were continuously monitored by electrodes placed at the outer canthi and chin respectively. Nasal and oral airflow were monitored using a triple port Thermistor. Respiratory effort was measured by piezoelectric technology employing an abdominal and thoracic belt. Blood oxygen saturation was continuously monitored by pulse oximetry. Heart rate and rhythm were monitored by surface electrocardiography. Anterior tibialis EMG was studied by using surface mounted electrodes placed 5 cm apart on both legs. Body position and snoring level were also monitored., TECHNICAL QUALITY OF STUDY:, Good., ELECTROPHYSIOLOGIC MEASUREMENTS:, Total recording time 406 minutes, total sleep time 365 minutes, sleep latency 25.5 minutes, REM latency 49 minutes, _____ 90%, sleep latency measured 86%. _____ period was obtained. The patient spent 10% of the time awake in bed., Stage I: 3.8, Stage II: 50.5, Stage III: 14%, Stage REM: 21.7%, The patient had relatively good sleep architecture, except for excessive waking., RESPIRATORY MEASUREMENTS:, Total apnea/hypopnea 75, age index 12.3 per hour. REM age index 15 per hour. Total arousal 101, arousal index 15.6 per hour. Oxygen desaturation was down to 88%. Longest event 35 second hypopnea with an FiO2 of 94%. Total limb movements 92, PRM index 15.1 per hour. PRM arousal index 8.9 per hour., ELECTROCARDIOGRAPHIC OBSERVATIONS:, Heart rate while asleep 60 to 64 per minute, while awake 70 to 78 per minute., CONCLUSIONS:, Obstructive sleep apnea syndrome with moderately loud snoring and significant apnea/hypopnea index., RECOMMENDATIONS:, AXIS B: Overnight polysomnography., AXIS C: Hypertension., The patient should return for nasal CPAP titration. Sleep apnea if not treated, may lead to chronic hypertension, which may have cardiovascular consequences. Excessive daytime sleepiness, dysfunction and memory loss may also occur.",
+  "gold": {
+   "facts": {
+    "sleep_test_documented": true,
+    "ahi": 12.3,
+    "osa_symptoms": true,
+    "cardiovascular_comorbidity": true
+   },
+   "decision": "approve",
+   "why": "All-night polysomnogram, index 12.3 per hour (transcribed as 'age index'), with hypertension and morning sleepiness"
+  }
+ },
+ {
+  "case_id": "MTS-1467",
+  "policy_id": "ncd_240_4_cpap",
+  "service": "CPAP device for obstructive sleep apnea (HCPCS E0601)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 1467,
+   "specialty": "Sleep Medicine",
+   "sample_name": "Sleep Difficulties"
+  },
+  "note": "CLINICAL HISTORY: , This is a 16-year-old man evaluated for sleep difficulties. He states he is \"feeling bad in the mornings\" that he has daytime somnolence and \"whenever I wake up I experience dizziness, weakness, stomachache, loss of appetite, drowsiness, overall sore body and a general feeling of unwell.\" He does state that he has only rarely he got anything suggestive of restless leg syndrome, is unaware of any apnea or like symptoms. He has a mouth breather. He states he wakens up during the night, usually goes to bed at 10 to 11, gets up at 7 to 7:30. In the weekends, he stays up late and sleeps until 1 in the afternoon. He lists sporadic use of melatonin and Benadryl, and Tylenol PM for sleep. His other medicines are Accutane, Nasonex and oxymetazoline. There is no smoking, no alcohol intake. He does have three caffeinated beverages a week. He is 75 inches, 185 pounds, BMI 23.1. He rated himself 4/7 on the Stanford Sleepiness Scale at the onset of the study and 6 on the Epworth Sleeping Scale, said that his night sleep in the lab was characterized by a longer than usual sleep onset latency with more arousals than usual. He woke up feeling equally rested and the only comment he made on the post sleep questionnaire was \"some of the wires\" is the source of problems., TECHNIQUE: , The study was performed with the following parameters measured throughout the entirety of the recording:, Electroencephalogram, electromyogram of the chin and lower extremities, electrooculogram, electrocardiogram, air flow from the nose and mouth, respiratory effort at the chest and abdomen, and finger oximetry., The record was scored for sleep and the various other parameters in 30-second epochs., RESULTS: , This study was performed in 61 minutes in duration during which he slept 432 minutes after 19 minutes sleep onset latency; thereafter, he had 10 awakenings for 6 minutes of wakefulness giving him a normal sleep efficiency of 95%. Sleep staging was actually fairly deep and normal for age with 5% stage I, 51% stage II, 22% slow wave sleep and 22% REM. He had 5 REM periods during the night. The first beginning 66 minutes after sleep onset. He did have 63 arousals, giving him a borderline elevated arousal index of 8.8, 16 were driven by limb movements, 41 of unclear origin, 6 from hypopneas., EEG PARAMETERS: , No abnormalities., EKG PARAMETERS: , Normal sinus rhythm, mean rate 76, no ectopics noted., EMG PARAMETERS: , 88 PLMs were noted. There was fairly small excursion with a movement index of 12, only 16 led to arousals with a movement arousal index of 2.2, not considered as a significant feature for sleep fragmentation., RESPIRATORY PARAMETERS:,  Breathing rate in the high teens, reaching as high as 20 in REM. There was really no snoring noted. He slept in all positions and during the night had 9 respiratory events, one was a postarousal central event, the other eight were obstructive hypopneas mean duration 26 seconds, little worse in the supine position where his AHI was 4.7, but overall his AHI was 1.3. This is only a marginal abnormality and is well below the threshold for CPAP intervention., IMPRESSION:,  Largely normal polysomnogram demonstrating very modest obstructive sleep apnea in the supine position and a very modest periodic limb movement disturbance.",
+  "gold": {
+   "facts": {
+    "sleep_test_documented": true,
+    "ahi": 1.3,
+    "osa_symptoms": true,
+    "cardiovascular_comorbidity": null
+   },
+   "decision": "pend",
+   "why": "Overall AHI 1.3 (4.7 only when supine): below the threshold"
+  }
+ },
+ {
+  "case_id": "MTS-1308",
+  "policy_id": "ncd_240_4_cpap",
+  "service": "CPAP device for obstructive sleep apnea (HCPCS E0601)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 1308,
+   "specialty": "SOAP / Chart / Progress Notes",
+   "sample_name": "Sleep Study Followup"
+  },
+  "note": "REASON FOR VISIT:,  This 48-year-old woman returns in followup after a full-night sleep study performed to evaluate her for daytime fatigue and insomnia., HISTORY OF PRESENT ILLNESS: , The patient presented initially to the Pulmonary Clinic with dyspnea on minimal exertion. At that time, she was evaluated and found to have evidence for sleep disruption and daytime fatigue. She also complained of nocturnal choking episodes that have since abated over the past several months. In the meantime, she had been scheduled for an overnight sleep study performed to evaluate her for sleep apnea, returns today to review her study results., The patient's sleep patterns consist of going to bed between 9.00 and 10.00 p.m. and awakening in the morning between 5.00 and 6.00 a.m. She reports difficulty in initiating sleep and then recurrent awakenings every 1 to 2 hours throughout the night. She reports tossing and turning throughout the night and awakening with the sheets in disarray. She reports that her sleep was much better quality in the sleep laboratory as compared to home. When she awakens, she might have a dull headache and feels tired in the morning. Her daughter reports that she has heard the patient talking during sleep and snoring. There are no apneic episodes. The patient reports that she used to cough a lot in the middle of the night, but has no longer been doing so in recent weeks., During the daytime, the patient reports spending a lot of sedentary time reading and watching TV. She routinely dozes off during these sedentary activities. She also might nap between 2.00 and 3.00 p.m., and nods off in the evening hours., The patient smokes perhaps one to two packs of cigarettes per day, particularly after dinner., She reports that her weight has fluctuated and peaked at 260 pounds approximately 1 year ago. Since that time, her weight is down by approximately 30 pounds., The patient is managed in Outpatient Psychiatry and at her Maintenance Clinic. She takes methadone, trazodone, and Seroquel., PAST MEDICAL HISTORY:, 1. Depression., 2. Hepatitis C., 3. Hypertension., 4. Inhaled and intravenous drug abuse history., The patient has a history of smoking two packs per day of cigarettes for approximately 25 pounds. She also has a history of recurrent atypical chest pain for which she has been evaluated., FAMILY HISTORY: , As previously documented., SOCIAL HISTORY: , The patient has a history of inhalation on intravenous drug abuse. She is currently on methadone maintenance. She is being followed in Psychiatry for depression and substance abuse issues. She lives with a room-mate., REVIEW OF SYSTEMS:,  Not contributory., MEDICATIONS: , Current medications include the following:, 1. Methadone 110 mg by mouth every day., 2. Paxil 60 mg by mouth every day., 3. Trazodone 30 mg by mouth nightly., 4. Seroquel 20 mg by mouth nightly., 5. Avalide (irbesartan) and hydrochlorothiazide., 6. Albuterol and Flovent inhalers two puffs by mouth twice a day., 7. Atrovent as needed., FINDINGS: , Vital Signs: Blood pressure 126/84, pulse 67, respiratory rate 18, weight 232 pounds, height 5 feet 8 inches, temperature 97.4 degrees, SaO2 is 99 percent on room air at rest. HEENT: Sclerae anicteric. Conjunctivae pink. Extraocular movements are intact. Pupils are equal, round, and reactive to light. The nasal passages show deviation in the nasal septum to the right. There is a slight bloody exudate at the right naris. Some nasal mucosal edema was noted with serous exudate bilaterally. The jaw is not foreshortened. The tongue is not large. Mallampati airway score was 3. The oropharynx was not shallow. There is no pharyngeal mucosa hypertrophy. No tonsillar tissue noted. The tongue is not large. Neck is supple. Thyroid without nodules or masses. Carotid upstrokes normal. No bruits. No jugular venous distention. Chest is clear to auscultation and percussion. No wheezing, rales, rhonchi or adventitious sounds. No prolongation of the expiratory phase. Cardiac: PMI not palpable. Regular rate and rhythm. S1 and S2 normal. No murmurs or gallops. Abdomen: Nontender. Bowel sounds normal. No liver or spleen palpable. Extremities: No clubbing or cyanosis. There is 1+ pretibial edema. Pulses are 2+ in upper and lower extremities. Neurologic: Grossly nonfocal., LABORATORIES:,  Pulmonary function studies reportedly show a mild restrictive ventilatory defect without obstruction. Diffusing capacity is well preserved., An overnight sleep study was performed on this patient at the end of 02/07. At that time, she reported that her sleep was better in the laboratories compared to home. She slept for a total sleep time of 398 minutes out of 432 minutes in bed (sleep proficiency 92 percent). She fell asleep in the middle of latency of less than 1 minute. She woke up after sleep onset of 34 minutes. She had stage I sleep that was some elevated at 28 percent of total sleep time, and stage I sleep is predominantly evident in the lateral portion of the night. The remainders were stage II at 69 percent, stage III and IV at 3 percent of total sleep time., The patient had no REM sleep., The patient had no periodic limb movements during sleep., The patient had no significant sleep-disordered breathing during non-REM sleep with less than one episode per hour. Oxyhemoglobin saturation remained in the low to mid 90s throughout the night., Intermittent inspiratory flow limitation compatible with snoring was observed during non-REM sleep., ASSESSMENT AND PLAN: , This patient presents with history of sleep disruption and daytime sleepiness with fatigue. Her symptoms are multifactorial., Regarding the etiology of difficulty in initiating and maintaining sleep, the patient has a component of psychophysiologic insomnia, based on reports of better sleep in the laboratory as compared to home. In addition, nontrivial smoking in the home setting may be contributing significantly to sleep disruption., Regarding her daytime sleepiness, the patient is taking a number of long-acting central nervous system acting medications to sedate her and can produce a lasting sedation throughout the daytime. These include trazodone, Seroquel, and methadone. Of these medications, the methadone is clearly indicative, given the history of substance abuse. It would be desirable to reduce or discontinue trazodone and then perhaps consider doing the same with Seroquel. I brought this possibility up with the patient, and I asked her to discuss this further with her psychiatrist., Finally, to help mitigate sleep disruption at night, I have provided her with tips for sleep hygiene. These include bedtime rituals, stimulus control therapy, and sleep restriction as well as avoidance of nicotine in the evening hours.",
+  "gold": {
+   "facts": {
+    "sleep_test_documented": true,
+    "ahi": null,
+    "osa_symptoms": true,
+    "cardiovascular_comorbidity": true
+   },
+   "decision": "pend",
+   "why": "Sleep study with 'less than one episode per hour' (no exact AHI); insomnia and fatigue instead"
+  }
+ },
+ {
+  "case_id": "MTS-1474",
+  "policy_id": "ncd_240_4_cpap",
+  "service": "CPAP device for obstructive sleep apnea (HCPCS E0601)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 1474,
+   "specialty": "Sleep Medicine",
+   "sample_name": "CPAP Titration Study"
+  },
+  "note": "PROCEDURE: , The test was performed in an observed hospital laboratory due to the evidence of obstructive sleep apnea. The patient was monitored for EEG, EOG, jaw and leg EMG, thoracoabdominal impedance, oral/nasal thermistors, EKG, and oximetry., CPAP TITRATION STUDY:,  Total sleep time 425 minutes, sleep onset 7.8 minutes, and sleep efficiency 95%. Stage I 6%, stage II 53%, stage III 20%, and REM stage 15%, and awake 5%. Number of awakenings 6. Total arousals 36 with index 5.4, mild leg jerk movement with index 10.1. There was one apnea and 17 hypopneas with apnea/hypopnea index 2.7. The pressures required to prevent apnea/hypopnea varied between 5 and 11 cm H2O. The optimal pressure was 11 cm H2O, which prevented all of the apneas/hypopneas. The patient spent all his sleeping time in supine position. Average oxygen saturation 94% with lowest oxygen saturation 89%. Only less than 0.2 minutes was spent with oxygen saturation less than 90%., SUMMARY: , Weight loss, PFTs if not done and CPAP with nasal mask at 11 cm H2O.",
+  "gold": {
+   "facts": {
+    "sleep_test_documented": null,
+    "ahi": null,
+    "osa_symptoms": null,
+    "cardiovascular_comorbidity": null
+   },
+   "decision": "pend",
+   "why": "CPAP titration study: AHI 2.7 is measured on CPAP, the diagnostic AHI is not in the note"
+  }
+ },
+ {
+  "case_id": "MTS-1310",
+  "policy_id": "ncd_240_4_cpap",
+  "service": "CPAP device for obstructive sleep apnea (HCPCS E0601)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 1310,
+   "specialty": "SOAP / Chart / Progress Notes",
+   "sample_name": "Sleep Apnea"
+  },
+  "note": "REASON FOR VISIT: , Mr. ABC is a 30-year-old man who returns in followup of his still moderate-to-severe sleep apnea. He returns today to review his response to CPAP., HISTORY OF PRESENT ILLNESS: , The patient initially presented with loud obnoxious snoring that disrupted the sleep of his bed partner. He was found to have moderate-to-severe sleep apnea (predominantly hypopnea), was treated with nasal CPAP at 10 cm H2O nasal pressure. He has been on CPAP now for several months, and returns for followup to review his response to treatment., The patient reports that the CPAP has limited his snoring at night. Occasionally, his bed partner wakes him in the middle of the night, when the mask comes off, and reminds him to replace the mask. The patient estimates that he uses the CPAP approximately 5 to 7 nights per week, and on occasion takes it off and does not replace the mask when he awakens spontaneously in the middle of the night., The patient's sleep pattern consists of going to bed between 11:00 and 11:30 at night and awakening between 6 to 7 a.m. on weekdays. On weekends, he might sleep until 8 to 9 a.m. On Saturday night, he might go to bed approximately mid night., As noted, the patient is not snoring on CPAP. He denies much tossing and turning and does not awaken with the sheets in disarray. He awakens feeling relatively refreshed., In the past few months, the patient has lost between 15 and 18 pounds in combination of dietary and exercise measures., He continues to work at Smith Barney in downtown Baltimore. He generally works from 8 to 8:30 a.m. until approximately 5 to 5:30 p.m. He is involved in training purpose to how to sell managed funds and accounts., The patient reports no change in daytime stamina. He has no difficulty staying awake during the daytime or evening hours., The past medical history is notable for allergic rhinitis., MEDICATIONS: , He is maintained on Flonase and denies much in the way of nasal symptoms., ALLERGIES: , Molds., FINDINGS: , Vital signs: Blood pressure 126/75, pulse 67, respiratory rate 16, weight 172 pounds, height 5 feet 9 inches, temperature 98.4 degrees and SaO2 is 99% on room air at rest., The patient has adenoidal facies as noted previously., Laboratories: The patient forgot to bring his smart card in for downloading today., ASSESSMENT: , Moderate-to-severe sleep apnea. I have recommended the patient continue CPAP indefinitely. He will be sending me his smart card for downloading to determine his CPAP usage pattern. In addition, he will continue efforts to maintain his weight at current levels or below. Should he succeed in reducing further, we might consider re-running a sleep study to determine whether he still requires a CPAP., PLANS: , In the meantime, if it is also that the possible nasal obstruction is contributing to snoring and obstructive hypopnea. I have recommended that a fiberoptic ENT exam be performed to exclude adenoidal tissue that may be contributing to obstruction. He will be returning for routine followup in 6 months.",
+  "gold": {
+   "facts": {
+    "sleep_test_documented": null,
+    "ahi": null,
+    "osa_symptoms": false,
+    "cardiovascular_comorbidity": null
+   },
+   "decision": "pend",
+   "why": "'Moderate-to-severe sleep apnea' on CPAP follow-up, but no AHI documented"
+  }
+ },
+ {
+  "case_id": "MTS-1350",
+  "policy_id": "ncd_240_4_cpap",
+  "service": "CPAP device for obstructive sleep apnea (HCPCS E0601)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 1350,
+   "specialty": "SOAP / Chart / Progress Notes",
+   "sample_name": "Obesity Hypoventilation Syndrome"
+  },
+  "note": "HISTORY OF PRESENT ILLNESS: , This is a 61-year-old woman with a history of polyarteritis nodosa, mononeuritis multiplex involving the lower extremities, and severe sleep apnea returns in followup following an overnight sleep study, on CPAP and oxygen to evaluate her for difficulty in initiating and maintaining sleep. She returns today to review results of an inpatient study performed approximately two weeks ago., In the meantime, the patient reports she continues on substantial doses of opiate medication to control leg pain from mononeuritis multiplex., She also takes Lasix for lower extremity edema., The patient reports that she generally initiates sleep on CPAP, but rips her mask off, tosses and turns throughout the night and has \"terrible quality sleep.\", MEDICATIONS: , Current medications are as previously noted. Changes include reduction in prednisone from 9 to 6 mg by mouth every morning. She continues to take Ativan 1 mg every six hours as needed. She takes imipramine 425 mg at bedtime., Her MS Contin dose is 150 mg every 8 to 12 hours and an immediate release morphine preparation, 45 to 75 mg by mouth every 8 hours as needed., FINDINGS: , Vital signs: Blood pressure 153/81, pulse 90, respiratory rate 20, weight 311.8 pounds (up 10 pounds from earlier this month), height 5 feet 6 inches, temperature 98.4 degrees, SaO2 is 88% on room air at rest. Chest is clear. Extremities show lower extremity pretibial edema with erythema., LABORATORIES: , An arterial blood gas on room air showed a pH of 7.38, PCO2 of 52, and PO2 of 57., CPAP compliance monitoring over the past two to three weeks showed average use of 3 hours 26 minutes on nights used. She used it for greater than 4 hours per night on 67% of night surveyed. Her estimated apnea/hypopnea index was 3 per hour. Her average leak flow was 67 liters per minute., The patient's overnight sleep study was performed as an inpatient sleep study during a routine hospitalization for intravenous gamma globulin therapy. She slept for a total sleep time of 257 minutes out of 272 minutes in bed (sleep efficiency approximately 90%). Sleep stage distribution was relatively normal with 2% stage I, 72% stage II, 24% stage III, IV, and 2% stage REM sleep., There were no periodic limb movements during sleep., There was evidence of a severe predominantly central sleep apnea during non-REM sleep at 173 episodes per hour and during REM sleep at 77 episodes per hour. Oxyhemoglobin saturations during non-REM sleep fluctuated from the baseline of 92% to an average low of 82%. During REM sleep, the baseline oxyhemoglobin saturation was 87% , decreased to 81% with sleep-disordered breathing episodes., Of note, the sleep study was performed on CPAP at 10.5 cm of H2O with oxygen at 8 liters per minute., ASSESSMENT:, 1. Obesity hypoventilation syndrome. The patient has evidence of a well-compensated respiratory acidosis, which is probably primarily related to severe obesity. In addition, there may be contribution from large doses of opiates and standing doses of gabapentin., 2. Severe central sleep apnea, on CPAP at 10 cmH2O and supplemental oxygen at 8 liters per minute. The breathing pattern is that of cluster or Biot's breathing throughout sleep. The primary etiology is probably opiate use, with contribution with further exacerbation by severe obesity which acts to lower the baseline oxyhemoglobin saturation, and worsen desaturations during apneic episodes., 3. Mononeuritis multiplex with pain requiring significant substantial doses of analgesia., 4. Hypoxemia primarily due to obesity, hypoventilation, and presumably basilar atelectasis and a combination of V/Q mismatch and shunt on that basis., PLANS: , My overall impression is that we should treat this patient's sleep disruption with measures to decrease central sleep apnea during sleep. These will include, (1). Decrease in evening doses of MS Contin, (2). Modest weight loss of approximately 10 to 20 pounds, and (3). Instituting Automated Servo Ventilation via nasal mask. With regard to latter, the patient will be returning for a trial of ASV to examine its effect on sleep-disordered breathing patterns., In addition, the patient will benefit from modest diuresis, with improvement of oxygenation, as well as nocturnal desaturation and oxygen requirements. I have encouraged the patient to increase her dose of Lasix from 100 to 120 mg by mouth every morning as previously prescribed. I have also asked her to add Lasix in additional late afternoon to evening dose of Lasix at 40 mg by mouth at that time. She was instructed to take between one and two K-Tab with her evening dose of Lasix (10 to 20 mEq)., In addition, we will obtain a complete set of pulmonary function studies to evaluate this patient for underlying causes of parenchymal lung disease that may interfere with oxygenation. Further workup for hypoxemia may include high-resolution CT scanning if evidence for significant pulmonary restriction and/or reductions in diffusion capacity is evident on pulmonary function testing.",
+  "gold": {
+   "facts": {
+    "sleep_test_documented": true,
+    "ahi": null,
+    "osa_symptoms": true,
+    "cardiovascular_comorbidity": null
+   },
+   "decision": "pend",
+   "why": "'Severe sleep apnea' on CPAP and oxygen, but no AHI documented"
+  }
+ },
+ {
+  "case_id": "MTS-1463",
+  "policy_id": "ncd_240_4_cpap",
+  "service": "CPAP device for obstructive sleep apnea (HCPCS E0601)",
+  "source": {
+   "dataset": "MTSamples",
+   "row": 1463,
+   "specialty": "Sleep Medicine",
+   "sample_name": "Pulmonary Consultation - 1"
+  },
+  "note": "CHIEF COMPLAINT:,  Rule out obstructive sleep apnea syndrome., Sample Patient is a pleasant, 61-year-old, obese, African-American male with a past medical history significant for hypertension, who presents to the Outpatient Clinic with complaints of loud snoring and witnessed apnea episodes by his wife for at least the past five years. He denies any gasping, choking, or coughing episodes while asleep at night. His bedtime is between 10 to 11 p.m., has no difficulty falling asleep, and is usually out of bed around 7 a.m. feeling refreshed. He has two to three episodes of nocturia per night. He denies any morning symptoms. He has mild excess daytime sleepiness manifested by dozing off during boring activities., PAST MEDICAL HISTORY:,  Hypertension, gastritis, and low back pain., PAST SURGICAL HISTORY:,  TURP., MEDICATIONS:,  Hytrin, Motrin, Lotensin, and Zantac., ALLERGIES:,  None., FAMILY HISTORY:,  Hypertension., SOCIAL HISTORY:,  Significant for about a 20-pack-year tobacco use, quit in 1991. No ethanol use or illicit drug use. He is married. He has one dog at home. He used to be employed at Budd Automotors as a die setter for about 37 to 40 years., REVIEW OF SYSTEMS:,  His weight has been steady over the years. Neck collar size is 17½\". He denies any chest pain, cough, or shortness of breath. Last chest x-ray within the past year, per his report, was normal., PHYSICAL EXAM:,  A pleasant, obese, African-American male in no apparent respiratory distress. T: 98. P: 90. RR: 20. BP: 156/90. O2 saturation: 97% on room air. Ht: 5' 5\". Wt: 198 lb. HEENT: A short thick neck, low-hanging palate, enlarged scalloped tongue, narrow foreshortened pharynx, clear nares, and no JVD. CARDIAC: Regular rate and rhythm without any adventitious sounds. CHEST: Clear lungs bilaterally. ABDOMEN: An obese abdomen with active bowel sounds. EXTREMITIES: No cyanosis, clubbing, or edema. NEUROLOGIC: Non-focal., IMPRESSION:, 1. Probable obstructive sleep apnea syndrome., 2. Hypertension., 3. Obesity., 4. History of tobacco use., PLAN:, 1. We will schedule an overnight sleep study to evaluate obstructive sleep apnea syndrome., 2. Encouraged weight loss., 3. Check TSH., 4. Asked not to drive and engage in any activity that could endanger himself or others while sleepy., 5. Asked to return to the clinic one week after sleep the study is done.",
+  "gold": {
+   "facts": {
+    "sleep_test_documented": false,
+    "ahi": null,
+    "osa_symptoms": true,
+    "cardiovascular_comorbidity": true
+   },
+   "decision": "pend",
+   "why": "Consult before any sleep study: overnight study still to be scheduled"
+  }
+ }
+]

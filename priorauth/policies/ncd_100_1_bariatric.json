@@ -1,0 +1,23 @@
+{
+  "id": "ncd_100_1_bariatric",
+  "title": "Bariatric Surgery for Treatment of Co-Morbid Conditions Related to Morbid Obesity",
+  "ncd": "100.1",
+  "ncd_version": 5,
+  "effective_date": "2013-09-24",
+  "source": "https://api.coverage.cms.gov/v1/data/ncd/?ncdid=57&ncdver=5",
+  "rules_version": "2026.10.1",
+  "facts": {
+    "bmi": {"type": "number", "description": "Body-mass index in kg/m2 as documented (not computed from weight alone)"},
+    "obesity_comorbidity": {"type": "boolean", "description": "At least one co-morbidity related to obesity is documented (e.g. type 2 diabetes, hypertension, obstructive sleep apnea, hyperlipidemia, osteoarthritis, GERD)"},
+    "prior_medical_treatment_failed": {"type": "boolean", "description": "Previously unsuccessful with medical (non-surgical) treatment for obesity, e.g. diets or programs without sustained weight loss"}
+  },
+  "criteria": [
+    {"id": "C1_BMI", "fact": "bmi", "op": ">=", "value": 35,
+     "policy_text": "covered for Medicare beneficiaries who have a body-mass index ≥ 35"},
+    {"id": "C2_COMORBIDITY", "fact": "obesity_comorbidity", "op": "==", "value": true,
+     "policy_text": "have at least one co-morbidity related to obesity (Type 2 diabetes mellitus is a co-morbidity for purposes of this NCD)"},
+    {"id": "C3_PRIOR_TREATMENT", "fact": "prior_medical_treatment_failed", "op": "==", "value": true,
+     "policy_text": "have been previously unsuccessful with medical treatment for obesity"}
+  ],
+  "approve_when": {"all": ["C1_BMI", "C2_COMORBIDITY", "C3_PRIOR_TREATMENT"]}
+}

@@ -1,0 +1,56 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  api:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env: {POSTGRES_PASSWORD: pa, POSTGRES_DB: priorauth}
+        ports: ["5432:5432"]
+        options: --health-cmd pg_isready --health-interval 5s --health-retries 10
+      mysql:
+        image: mysql:8.4
+        env: {MYSQL_ROOT_PASSWORD: pa, MYSQL_DATABASE: priorauth}
+        ports: ["3306:3306"]
+        options: --health-cmd "mysqladmin ping -ppa" --health-interval 5s --health-retries 20
+      mongo:
+        image: mongo:7
+        ports: ["27017:27017"]
+    env:
+      PRIORAUTH_TEST_PG_URL: postgresql+psycopg://postgres:pa@localhost:5432/priorauth
+      PRIORAUTH_TEST_MYSQL_URL: mysql+pymysql://root:pa@127.0.0.1:3306/priorauth
+      PRIORAUTH_TEST_MONGO_URI: mongodb://localhost:27017
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -r requirements.txt
+      - name: Unit, store and API tests on SQLite, PostgreSQL, MySQL, MongoDB and S3 (moto)
+        run: pytest -q
+      - name: Evaluation gate on the 22 real cases (keyword extractor, offline) - no false approvals allowed
+        run: |
+          python -m evals.run_eval keyword
+          python -c "import json,sys; s=json.load(open('results/eval_keyword.json'))['summary']; sys.exit(1 if s['false_approvals'] else 0)"
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run: {working-directory: web}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: "24", cache: npm, cache-dependency-path: web/package-lock.json}
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+  docker:
+    runs-on: ubuntu-latest
+    needs: api
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t priorauth .
+      - name: Container starts, loads the real cases and serves the queue
+        run: |
+          docker run -d -p 8920:8920 -e PRIORAUTH_DEMO=1 -e PRIORAUTH_EXTRACTOR=keyword --name pa priorauth
+          for i in $(seq 1 30); do curl -sf localhost:8920/health && break; sleep 2; done
+          curl -sf localhost:8920/stats && curl -sf "localhost:8920/cases?status=pending_review" | head -c 300
