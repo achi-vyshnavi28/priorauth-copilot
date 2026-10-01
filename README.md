@@ -91,3 +91,6 @@ To rebuild the cases, download `mtsamples.csv` into `data/raw/` and run `python 
 - Labels are mine, not a clinician's. Two policies only; the NCD text is real but real payers add their own criteria.
 - MTSamples notes were not written for prior authorization, so they often lack elements a real submission would include.
 - Not medical advice and not a coverage determination tool.
+
+## License
+The code is open source under the [MIT License](LICENSE). Clinical notes come from MTSamples (Apache-2.0); CMS coverage policies are US government works.
