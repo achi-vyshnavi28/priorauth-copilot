@@ -100,6 +100,23 @@ def submit(body: CaseIn):
         raise HTTPException(404, str(e)) from e
 
 
+class AgentCaseIn(BaseModel):
+    service: str = Field(min_length=3, description="Requested service with its CPT/HCPCS code, e.g. 'CPAP device (HCPCS E0601)'")
+    member_ref: str = Field(min_length=1)
+    notes: list[str] = Field(min_length=1)
+    urgency: Literal["standard", "expedited"] = "standard"
+    planner: Literal["rules", "llm"] = "rules"
+
+
+@app.post("/cases/agent", status_code=201)
+def agent_submit(body: AgentCaseIn):
+    """The review agent works the request: routes it to a policy, extracts evidence, requests missing documentation."""
+    try:
+        return service().agent_submit(body.service, body.member_ref, body.notes, body.urgency, planner=body.planner)
+    except ValueError as e:
+        raise HTTPException(422, str(e)) from e
+
+
 @app.get("/cases")
 def queue(status: str = "pending_review"):
     return service().cases.queue(status)

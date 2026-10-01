@@ -1,0 +1,1981 @@
+{
+ "summary": {
+  "planner": "rules",
+  "extractors": "keyword only",
+  "cases": 22,
+  "correct_decisions": 20,
+  "false_approvals": 0,
+  "routed_correctly": 22,
+  "finished": 22,
+  "llm_extractions": 0,
+  "blocked_steps": 0,
+  "planner_fallbacks": 0,
+  "avg_steps": 5.5
+ },
+ "cases": [
+  {
+   "case_id": "MTS-0002",
+   "gold": "approve",
+   "decision": "approve",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": null,
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 4,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_100_1_bariatric"
+     },
+     "result": {
+      "policy": "Bariatric Surgery for Treatment of Co-Morbid Conditions Related to Morbid Obesity"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "bmi": 51.0,
+       "obesity_comorbidity": true,
+       "prior_medical_treatment_failed": true
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "approve",
+      "pend_reason": null,
+      "missing_facts": []
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "approve"
+     },
+     "result": {
+      "outcome": "approve"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-4417",
+   "gold": "approve",
+   "decision": "approve",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": null,
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 4,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_100_1_bariatric"
+     },
+     "result": {
+      "policy": "Bariatric Surgery for Treatment of Co-Morbid Conditions Related to Morbid Obesity"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "bmi": 69.7,
+       "obesity_comorbidity": true,
+       "prior_medical_treatment_failed": true
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "approve",
+      "pend_reason": null,
+      "missing_facts": []
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "approve"
+     },
+     "result": {
+      "outcome": "approve"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-4561",
+   "gold": "approve",
+   "decision": "approve",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": null,
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 4,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_100_1_bariatric"
+     },
+     "result": {
+      "policy": "Bariatric Surgery for Treatment of Co-Morbid Conditions Related to Morbid Obesity"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "bmi": 46.0,
+       "obesity_comorbidity": true,
+       "prior_medical_treatment_failed": true
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "approve",
+      "pend_reason": null,
+      "missing_facts": []
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "approve"
+     },
+     "result": {
+      "outcome": "approve"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-4414",
+   "gold": "pend",
+   "decision": "pend",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": {
+    "facts": [
+     "obesity_comorbidity"
+    ],
+    "message": "Please send documentation of: obesity comorbidity."
+   },
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 6,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_100_1_bariatric"
+     },
+     "result": {
+      "policy": "Bariatric Surgery for Treatment of Co-Morbid Conditions Related to Morbid Obesity"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "bmi": 43.0,
+       "obesity_comorbidity": null,
+       "prior_medical_treatment_failed": true
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "pend",
+      "pend_reason": "missing_documentation",
+      "missing_facts": [
+       "obesity_comorbidity"
+      ]
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "request_documentation",
+     "args": {
+      "missing_facts": [
+       "obesity_comorbidity"
+      ],
+      "message": "Please send documentation of: obesity comorbidity."
+     },
+     "result": {
+      "queued": true
+     }
+    },
+    {
+     "step": 5,
+     "planner": "rules",
+     "tool": "route_to_clinician",
+     "args": {
+      "brief": "Pended for clinical review: documentation does not state obesity_comorbidity. Pend reason: missing documentation."
+     },
+     "result": {
+      "queued": "pending_review"
+     }
+    },
+    {
+     "step": 6,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "pend"
+     },
+     "result": {
+      "outcome": "pend"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-0013",
+   "gold": "pend",
+   "decision": "pend",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": {
+    "facts": [
+     "prior_medical_treatment_failed"
+    ],
+    "message": "Please send documentation of: prior medical treatment failed."
+   },
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 6,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_100_1_bariatric"
+     },
+     "result": {
+      "policy": "Bariatric Surgery for Treatment of Co-Morbid Conditions Related to Morbid Obesity"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "bmi": 41.0,
+       "obesity_comorbidity": true,
+       "prior_medical_treatment_failed": null
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "pend",
+      "pend_reason": "missing_documentation",
+      "missing_facts": [
+       "prior_medical_treatment_failed"
+      ]
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "request_documentation",
+     "args": {
+      "missing_facts": [
+       "prior_medical_treatment_failed"
+      ],
+      "message": "Please send documentation of: prior medical treatment failed."
+     },
+     "result": {
+      "queued": true
+     }
+    },
+    {
+     "step": 5,
+     "planner": "rules",
+     "tool": "route_to_clinician",
+     "args": {
+      "brief": "Pended for clinical review: documentation does not state prior_medical_treatment_failed. Pend reason: missing documentation."
+     },
+     "result": {
+      "queued": "pending_review"
+     }
+    },
+    {
+     "step": 6,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "pend"
+     },
+     "result": {
+      "outcome": "pend"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-4566",
+   "gold": "pend",
+   "decision": "pend",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": {
+    "facts": [
+     "prior_medical_treatment_failed"
+    ],
+    "message": "Please send documentation of: prior medical treatment failed."
+   },
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 6,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_100_1_bariatric"
+     },
+     "result": {
+      "policy": "Bariatric Surgery for Treatment of Co-Morbid Conditions Related to Morbid Obesity"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "bmi": 43.0,
+       "obesity_comorbidity": true,
+       "prior_medical_treatment_failed": null
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "pend",
+      "pend_reason": "missing_documentation",
+      "missing_facts": [
+       "prior_medical_treatment_failed"
+      ]
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "request_documentation",
+     "args": {
+      "missing_facts": [
+       "prior_medical_treatment_failed"
+      ],
+      "message": "Please send documentation of: prior medical treatment failed."
+     },
+     "result": {
+      "queued": true
+     }
+    },
+    {
+     "step": 5,
+     "planner": "rules",
+     "tool": "route_to_clinician",
+     "args": {
+      "brief": "Pended for clinical review: documentation does not state prior_medical_treatment_failed. Pend reason: missing documentation."
+     },
+     "result": {
+      "queued": "pending_review"
+     }
+    },
+    {
+     "step": 6,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "pend"
+     },
+     "result": {
+      "outcome": "pend"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-4567",
+   "gold": "pend",
+   "decision": "pend",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": {
+    "facts": [
+     "prior_medical_treatment_failed"
+    ],
+    "message": "Please send documentation of: prior medical treatment failed."
+   },
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 6,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_100_1_bariatric"
+     },
+     "result": {
+      "policy": "Bariatric Surgery for Treatment of Co-Morbid Conditions Related to Morbid Obesity"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "bmi": 43.0,
+       "obesity_comorbidity": true,
+       "prior_medical_treatment_failed": null
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "pend",
+      "pend_reason": "missing_documentation",
+      "missing_facts": [
+       "prior_medical_treatment_failed"
+      ]
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "request_documentation",
+     "args": {
+      "missing_facts": [
+       "prior_medical_treatment_failed"
+      ],
+      "message": "Please send documentation of: prior medical treatment failed."
+     },
+     "result": {
+      "queued": true
+     }
+    },
+    {
+     "step": 5,
+     "planner": "rules",
+     "tool": "route_to_clinician",
+     "args": {
+      "brief": "Pended for clinical review: documentation does not state prior_medical_treatment_failed. Pend reason: missing documentation."
+     },
+     "result": {
+      "queued": "pending_review"
+     }
+    },
+    {
+     "step": 6,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "pend"
+     },
+     "result": {
+      "outcome": "pend"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-3942",
+   "gold": "pend",
+   "decision": "pend",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": {
+    "facts": [
+     "obesity_comorbidity"
+    ],
+    "message": "Please send documentation of: obesity comorbidity."
+   },
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 6,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_100_1_bariatric"
+     },
+     "result": {
+      "policy": "Bariatric Surgery for Treatment of Co-Morbid Conditions Related to Morbid Obesity"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "bmi": 51.0,
+       "obesity_comorbidity": null,
+       "prior_medical_treatment_failed": true
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "pend",
+      "pend_reason": "missing_documentation",
+      "missing_facts": [
+       "obesity_comorbidity"
+      ]
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "request_documentation",
+     "args": {
+      "missing_facts": [
+       "obesity_comorbidity"
+      ],
+      "message": "Please send documentation of: obesity comorbidity."
+     },
+     "result": {
+      "queued": true
+     }
+    },
+    {
+     "step": 5,
+     "planner": "rules",
+     "tool": "route_to_clinician",
+     "args": {
+      "brief": "Pended for clinical review: documentation does not state obesity_comorbidity. Pend reason: missing documentation."
+     },
+     "result": {
+      "queued": "pending_review"
+     }
+    },
+    {
+     "step": 6,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "pend"
+     },
+     "result": {
+      "outcome": "pend"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-0001",
+   "gold": "pend",
+   "decision": "pend",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": {
+    "facts": [
+     "bmi",
+     "prior_medical_treatment_failed"
+    ],
+    "message": "Please send documentation of: bmi, prior medical treatment failed."
+   },
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 6,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_100_1_bariatric"
+     },
+     "result": {
+      "policy": "Bariatric Surgery for Treatment of Co-Morbid Conditions Related to Morbid Obesity"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "bmi": null,
+       "obesity_comorbidity": true,
+       "prior_medical_treatment_failed": null
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "pend",
+      "pend_reason": "missing_documentation",
+      "missing_facts": [
+       "bmi",
+       "prior_medical_treatment_failed"
+      ]
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "request_documentation",
+     "args": {
+      "missing_facts": [
+       "bmi",
+       "prior_medical_treatment_failed"
+      ],
+      "message": "Please send documentation of: bmi, prior medical treatment failed."
+     },
+     "result": {
+      "queued": true
+     }
+    },
+    {
+     "step": 5,
+     "planner": "rules",
+     "tool": "route_to_clinician",
+     "args": {
+      "brief": "Pended for clinical review: documentation does not state bmi, prior_medical_treatment_failed. Pend reason: missing documentation."
+     },
+     "result": {
+      "queued": "pending_review"
+     }
+    },
+    {
+     "step": 6,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "pend"
+     },
+     "result": {
+      "outcome": "pend"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-0010",
+   "gold": "pend",
+   "decision": "pend",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": {
+    "facts": [
+     "bmi",
+     "obesity_comorbidity"
+    ],
+    "message": "Please send documentation of: bmi, obesity comorbidity."
+   },
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 6,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_100_1_bariatric"
+     },
+     "result": {
+      "policy": "Bariatric Surgery for Treatment of Co-Morbid Conditions Related to Morbid Obesity"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "bmi": null,
+       "obesity_comorbidity": null,
+       "prior_medical_treatment_failed": true
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "pend",
+      "pend_reason": "missing_documentation",
+      "missing_facts": [
+       "bmi",
+       "obesity_comorbidity"
+      ]
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "request_documentation",
+     "args": {
+      "missing_facts": [
+       "bmi",
+       "obesity_comorbidity"
+      ],
+      "message": "Please send documentation of: bmi, obesity comorbidity."
+     },
+     "result": {
+      "queued": true
+     }
+    },
+    {
+     "step": 5,
+     "planner": "rules",
+     "tool": "route_to_clinician",
+     "args": {
+      "brief": "Pended for clinical review: documentation does not state bmi, obesity_comorbidity. Pend reason: missing documentation."
+     },
+     "result": {
+      "queued": "pending_review"
+     }
+    },
+    {
+     "step": 6,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "pend"
+     },
+     "result": {
+      "outcome": "pend"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-0005",
+   "gold": "pend",
+   "decision": "pend",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": {
+    "facts": [
+     "bmi",
+     "obesity_comorbidity"
+    ],
+    "message": "Please send documentation of: bmi, obesity comorbidity."
+   },
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 6,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_100_1_bariatric"
+     },
+     "result": {
+      "policy": "Bariatric Surgery for Treatment of Co-Morbid Conditions Related to Morbid Obesity"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "bmi": null,
+       "obesity_comorbidity": null,
+       "prior_medical_treatment_failed": true
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "pend",
+      "pend_reason": "missing_documentation",
+      "missing_facts": [
+       "bmi",
+       "obesity_comorbidity"
+      ]
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "request_documentation",
+     "args": {
+      "missing_facts": [
+       "bmi",
+       "obesity_comorbidity"
+      ],
+      "message": "Please send documentation of: bmi, obesity comorbidity."
+     },
+     "result": {
+      "queued": true
+     }
+    },
+    {
+     "step": 5,
+     "planner": "rules",
+     "tool": "route_to_clinician",
+     "args": {
+      "brief": "Pended for clinical review: documentation does not state bmi, obesity_comorbidity. Pend reason: missing documentation."
+     },
+     "result": {
+      "queued": "pending_review"
+     }
+    },
+    {
+     "step": 6,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "pend"
+     },
+     "result": {
+      "outcome": "pend"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-0015",
+   "gold": "pend",
+   "decision": "pend",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": {
+    "facts": [
+     "bmi",
+     "obesity_comorbidity",
+     "prior_medical_treatment_failed"
+    ],
+    "message": "Please send documentation of: bmi, obesity comorbidity, prior medical treatment failed."
+   },
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 6,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_100_1_bariatric"
+     },
+     "result": {
+      "policy": "Bariatric Surgery for Treatment of Co-Morbid Conditions Related to Morbid Obesity"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "bmi": null,
+       "obesity_comorbidity": null,
+       "prior_medical_treatment_failed": null
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "pend",
+      "pend_reason": "missing_documentation",
+      "missing_facts": [
+       "bmi",
+       "obesity_comorbidity",
+       "prior_medical_treatment_failed"
+      ]
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "request_documentation",
+     "args": {
+      "missing_facts": [
+       "bmi",
+       "obesity_comorbidity",
+       "prior_medical_treatment_failed"
+      ],
+      "message": "Please send documentation of: bmi, obesity comorbidity, prior medical treatment failed."
+     },
+     "result": {
+      "queued": true
+     }
+    },
+    {
+     "step": 5,
+     "planner": "rules",
+     "tool": "route_to_clinician",
+     "args": {
+      "brief": "Pended for clinical review: documentation does not state bmi, obesity_comorbidity, prior_medical_treatment_failed. Pend reason: missing documentation."
+     },
+     "result": {
+      "queued": "pending_review"
+     }
+    },
+    {
+     "step": 6,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "pend"
+     },
+     "result": {
+      "outcome": "pend"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-1399",
+   "gold": "pend",
+   "decision": "pend",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": {
+    "facts": [
+     "bmi",
+     "obesity_comorbidity",
+     "prior_medical_treatment_failed"
+    ],
+    "message": "Please send documentation of: bmi, obesity comorbidity, prior medical treatment failed."
+   },
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 6,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_100_1_bariatric"
+     },
+     "result": {
+      "policy": "Bariatric Surgery for Treatment of Co-Morbid Conditions Related to Morbid Obesity"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "bmi": null,
+       "obesity_comorbidity": null,
+       "prior_medical_treatment_failed": null
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "pend",
+      "pend_reason": "missing_documentation",
+      "missing_facts": [
+       "bmi",
+       "obesity_comorbidity",
+       "prior_medical_treatment_failed"
+      ]
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "request_documentation",
+     "args": {
+      "missing_facts": [
+       "bmi",
+       "obesity_comorbidity",
+       "prior_medical_treatment_failed"
+      ],
+      "message": "Please send documentation of: bmi, obesity comorbidity, prior medical treatment failed."
+     },
+     "result": {
+      "queued": true
+     }
+    },
+    {
+     "step": 5,
+     "planner": "rules",
+     "tool": "route_to_clinician",
+     "args": {
+      "brief": "Pended for clinical review: documentation does not state bmi, obesity_comorbidity, prior_medical_treatment_failed. Pend reason: missing documentation."
+     },
+     "result": {
+      "queued": "pending_review"
+     }
+    },
+    {
+     "step": 6,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "pend"
+     },
+     "result": {
+      "outcome": "pend"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-1462",
+   "gold": "approve",
+   "decision": "approve",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": null,
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 4,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_240_4_cpap"
+     },
+     "result": {
+      "policy": "Continuous Positive Airway Pressure (CPAP) Therapy For Obstructive Sleep Apnea (OSA)"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "sleep_test_documented": true,
+       "ahi": 15.2,
+       "osa_symptoms": true,
+       "cardiovascular_comorbidity": true
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "approve",
+      "pend_reason": null,
+      "missing_facts": []
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "approve"
+     },
+     "result": {
+      "outcome": "approve"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-1468",
+   "gold": "approve",
+   "decision": "pend",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": {
+    "facts": [
+     "cardiovascular_comorbidity",
+     "osa_symptoms",
+     "sleep_test_documented"
+    ],
+    "message": "Please send documentation of: cardiovascular comorbidity, osa symptoms, sleep test documented."
+   },
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 6,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_240_4_cpap"
+     },
+     "result": {
+      "policy": "Continuous Positive Airway Pressure (CPAP) Therapy For Obstructive Sleep Apnea (OSA)"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "sleep_test_documented": null,
+       "ahi": 76.0,
+       "osa_symptoms": null,
+       "cardiovascular_comorbidity": null
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "pend",
+      "pend_reason": "missing_documentation",
+      "missing_facts": [
+       "cardiovascular_comorbidity",
+       "osa_symptoms",
+       "sleep_test_documented"
+      ]
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "request_documentation",
+     "args": {
+      "missing_facts": [
+       "cardiovascular_comorbidity",
+       "osa_symptoms",
+       "sleep_test_documented"
+      ],
+      "message": "Please send documentation of: cardiovascular comorbidity, osa symptoms, sleep test documented."
+     },
+     "result": {
+      "queued": true
+     }
+    },
+    {
+     "step": 5,
+     "planner": "rules",
+     "tool": "route_to_clinician",
+     "args": {
+      "brief": "Pended for clinical review: documentation does not state cardiovascular_comorbidity, osa_symptoms, sleep_test_documented. Pend reason: missing documentation."
+     },
+     "result": {
+      "queued": "pending_review"
+     }
+    },
+    {
+     "step": 6,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "pend"
+     },
+     "result": {
+      "outcome": "pend"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-1465",
+   "gold": "approve",
+   "decision": "pend",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": {
+    "facts": [
+     "ahi"
+    ],
+    "message": "Please send documentation of: ahi."
+   },
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 6,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_240_4_cpap"
+     },
+     "result": {
+      "policy": "Continuous Positive Airway Pressure (CPAP) Therapy For Obstructive Sleep Apnea (OSA)"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "sleep_test_documented": true,
+       "ahi": null,
+       "osa_symptoms": true,
+       "cardiovascular_comorbidity": true
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "pend",
+      "pend_reason": "missing_documentation",
+      "missing_facts": [
+       "ahi"
+      ]
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "request_documentation",
+     "args": {
+      "missing_facts": [
+       "ahi"
+      ],
+      "message": "Please send documentation of: ahi."
+     },
+     "result": {
+      "queued": true
+     }
+    },
+    {
+     "step": 5,
+     "planner": "rules",
+     "tool": "route_to_clinician",
+     "args": {
+      "brief": "Pended for clinical review: documentation does not state ahi. Pend reason: missing documentation."
+     },
+     "result": {
+      "queued": "pending_review"
+     }
+    },
+    {
+     "step": 6,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "pend"
+     },
+     "result": {
+      "outcome": "pend"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-1467",
+   "gold": "pend",
+   "decision": "pend",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": null,
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 5,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_240_4_cpap"
+     },
+     "result": {
+      "policy": "Continuous Positive Airway Pressure (CPAP) Therapy For Obstructive Sleep Apnea (OSA)"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "sleep_test_documented": true,
+       "ahi": 4.7,
+       "osa_symptoms": true,
+       "cardiovascular_comorbidity": null
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "pend",
+      "pend_reason": "criteria_not_met",
+      "missing_facts": []
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "route_to_clinician",
+     "args": {
+      "brief": "Pended for clinical review: criteria not met (C2_AHI_15, C3_AHI_5_14). Only a clinician can deny. Pend reason: criteria not met."
+     },
+     "result": {
+      "queued": "pending_review"
+     }
+    },
+    {
+     "step": 5,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "pend"
+     },
+     "result": {
+      "outcome": "pend"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-1308",
+   "gold": "pend",
+   "decision": "pend",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": {
+    "facts": [
+     "ahi"
+    ],
+    "message": "Please send documentation of: ahi."
+   },
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 6,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_240_4_cpap"
+     },
+     "result": {
+      "policy": "Continuous Positive Airway Pressure (CPAP) Therapy For Obstructive Sleep Apnea (OSA)"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "sleep_test_documented": true,
+       "ahi": null,
+       "osa_symptoms": true,
+       "cardiovascular_comorbidity": true
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "pend",
+      "pend_reason": "missing_documentation",
+      "missing_facts": [
+       "ahi"
+      ]
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "request_documentation",
+     "args": {
+      "missing_facts": [
+       "ahi"
+      ],
+      "message": "Please send documentation of: ahi."
+     },
+     "result": {
+      "queued": true
+     }
+    },
+    {
+     "step": 5,
+     "planner": "rules",
+     "tool": "route_to_clinician",
+     "args": {
+      "brief": "Pended for clinical review: documentation does not state ahi. Pend reason: missing documentation."
+     },
+     "result": {
+      "queued": "pending_review"
+     }
+    },
+    {
+     "step": 6,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "pend"
+     },
+     "result": {
+      "outcome": "pend"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-1474",
+   "gold": "pend",
+   "decision": "pend",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": null,
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 5,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_240_4_cpap"
+     },
+     "result": {
+      "policy": "Continuous Positive Airway Pressure (CPAP) Therapy For Obstructive Sleep Apnea (OSA)"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "sleep_test_documented": null,
+       "ahi": 2.7,
+       "osa_symptoms": null,
+       "cardiovascular_comorbidity": null
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "pend",
+      "pend_reason": "criteria_not_met",
+      "missing_facts": []
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "route_to_clinician",
+     "args": {
+      "brief": "Pended for clinical review: criteria not met (C2_AHI_15, C3_AHI_5_14). Only a clinician can deny. Pend reason: criteria not met."
+     },
+     "result": {
+      "queued": "pending_review"
+     }
+    },
+    {
+     "step": 5,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "pend"
+     },
+     "result": {
+      "outcome": "pend"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-1310",
+   "gold": "pend",
+   "decision": "pend",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": {
+    "facts": [
+     "ahi",
+     "cardiovascular_comorbidity",
+     "osa_symptoms"
+    ],
+    "message": "Please send documentation of: ahi, cardiovascular comorbidity, osa symptoms."
+   },
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 6,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_240_4_cpap"
+     },
+     "result": {
+      "policy": "Continuous Positive Airway Pressure (CPAP) Therapy For Obstructive Sleep Apnea (OSA)"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "sleep_test_documented": true,
+       "ahi": null,
+       "osa_symptoms": null,
+       "cardiovascular_comorbidity": null
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "pend",
+      "pend_reason": "missing_documentation",
+      "missing_facts": [
+       "ahi",
+       "cardiovascular_comorbidity",
+       "osa_symptoms"
+      ]
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "request_documentation",
+     "args": {
+      "missing_facts": [
+       "ahi",
+       "cardiovascular_comorbidity",
+       "osa_symptoms"
+      ],
+      "message": "Please send documentation of: ahi, cardiovascular comorbidity, osa symptoms."
+     },
+     "result": {
+      "queued": true
+     }
+    },
+    {
+     "step": 5,
+     "planner": "rules",
+     "tool": "route_to_clinician",
+     "args": {
+      "brief": "Pended for clinical review: documentation does not state ahi, cardiovascular_comorbidity, osa_symptoms. Pend reason: missing documentation."
+     },
+     "result": {
+      "queued": "pending_review"
+     }
+    },
+    {
+     "step": 6,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "pend"
+     },
+     "result": {
+      "outcome": "pend"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-1350",
+   "gold": "pend",
+   "decision": "pend",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": null,
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 5,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_240_4_cpap"
+     },
+     "result": {
+      "policy": "Continuous Positive Airway Pressure (CPAP) Therapy For Obstructive Sleep Apnea (OSA)"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "sleep_test_documented": true,
+       "ahi": 3.0,
+       "osa_symptoms": null,
+       "cardiovascular_comorbidity": null
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "pend",
+      "pend_reason": "criteria_not_met",
+      "missing_facts": []
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "route_to_clinician",
+     "args": {
+      "brief": "Pended for clinical review: criteria not met (C2_AHI_15, C3_AHI_5_14). Only a clinician can deny. Pend reason: criteria not met."
+     },
+     "result": {
+      "queued": "pending_review"
+     }
+    },
+    {
+     "step": 5,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "pend"
+     },
+     "result": {
+      "outcome": "pend"
+     }
+    }
+   ]
+  },
+  {
+   "case_id": "MTS-1463",
+   "gold": "pend",
+   "decision": "pend",
+   "routed_correctly": true,
+   "finished": true,
+   "methods_used": [
+    "keyword"
+   ],
+   "documentation_requested": null,
+   "blocked_steps": 0,
+   "planner_fallbacks": 0,
+   "steps": 5,
+   "trace": [
+    {
+     "step": 1,
+     "planner": "rules",
+     "tool": "select_policy",
+     "args": {
+      "policy_id": "ncd_240_4_cpap"
+     },
+     "result": {
+      "policy": "Continuous Positive Airway Pressure (CPAP) Therapy For Obstructive Sleep Apnea (OSA)"
+     }
+    },
+    {
+     "step": 2,
+     "planner": "rules",
+     "tool": "extract_evidence",
+     "args": {
+      "method": "keyword"
+     },
+     "result": {
+      "method": "keyword",
+      "facts": {
+       "sleep_test_documented": false,
+       "ahi": null,
+       "osa_symptoms": true,
+       "cardiovascular_comorbidity": true
+      }
+     }
+    },
+    {
+     "step": 3,
+     "planner": "rules",
+     "tool": "evaluate",
+     "args": {},
+     "result": {
+      "outcome": "pend",
+      "pend_reason": "criteria_not_met",
+      "missing_facts": []
+     }
+    },
+    {
+     "step": 4,
+     "planner": "rules",
+     "tool": "route_to_clinician",
+     "args": {
+      "brief": "Pended for clinical review: criteria not met (C1_SLEEP_TEST). Only a clinician can deny. Pend reason: criteria not met."
+     },
+     "result": {
+      "queued": "pending_review"
+     }
+    },
+    {
+     "step": 5,
+     "planner": "rules",
+     "tool": "finish",
+     "args": {
+      "outcome": "pend"
+     },
+     "result": {
+      "outcome": "pend"
+     }
+    }
+   ]
+  }
+ ]
+}

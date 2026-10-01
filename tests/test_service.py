@@ -118,3 +118,13 @@ def test_api_end_to_end(monkeypatch, tmp_path):
     assert ok.status_code == 200 and ok.json()["status"] == "approved"
     assert client.get("/cases/nope").status_code == 404
     assert client.post("/cases", json={"policy_id": "nope", "member_ref": "x", "notes": ["n"]}).status_code == 404
+
+
+def test_agent_intake_stores_the_case_and_its_trace(svc):
+    s, _ = svc
+    c = case("MTS-0013")
+    out = s.agent_submit(c["service"], "M-7", [c["note"]], case_id="PA-A")
+    assert out["decision"]["outcome"] == "pend" and out["agent"]["documentation_requested"]
+    stored = s.cases.get("PA-A")
+    assert stored["status"] == "pending_review" and stored["policy_id"] == c["policy_id"]
+    assert stored["decisions"][0]["actor"].startswith("agent:rules")

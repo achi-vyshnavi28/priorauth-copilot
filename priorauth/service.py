@@ -32,6 +32,29 @@ class PriorAuthService:
                                    detail, pend_reason=decision.pend_reason)
         return {"case_id": case_id, **detail}
 
+    def agent_submit(self, service_requested: str, member_ref: str, notes: list[str], urgency: str = "standard",
+                     planner: str = "rules", case_id: str | None = None, source: dict | None = None) -> dict:
+        """Intake worked by the review agent: it routes the request to a policy, picks the extractor, and requests
+        missing documentation. The agent's full trace (including blocked steps) goes into the audit trail."""
+        from priorauth.agent import ReviewAgent
+
+        run = ReviewAgent(planner=planner, llm_extractor=self.extractor == "llm").run(service_requested, "\n\n".join(notes))
+        if not run["finished"] or not run["policy_id"]:
+            raise ValueError("the agent could not route or finish this request; send it to manual intake")
+        policy = load_policy(run["policy_id"])
+        case_id = case_id or f"PA-{uuid.uuid4().hex[:10].upper()}"
+        self.cases.create(case_id, run["policy_id"], policy.title, member_ref, urgency)
+        for i, text in enumerate(notes, 1):
+            uri = self.files.put(case_id, f"note-{i}", text)
+            self.docs.add(case_id, text, source=source, attachment_uri=uri)
+        d = run["decision"]
+        detail = {"extractor": run["extractor"], "decision": d, "evidence": run["evidence"],
+                  "agent": {k: run[k] for k in ("trace", "blocked_steps", "planner_fallbacks", "methods_used",
+                                                 "documentation_requested", "clinician_brief")}}
+        self.cases.record_decision(case_id, f"agent:{planner}:{d['rules_version']}", d["outcome"],
+                                   run["clinician_brief"] or d["summary"], detail, pend_reason=d["pend_reason"])
+        return {"case_id": case_id, **detail}
+
     def clinician_review(self, case_id: str, clinician: str, outcome: str, rationale: str) -> dict:
         if outcome not in ("approve", "deny"):
             raise ValueError("a clinician decision is approve or deny")

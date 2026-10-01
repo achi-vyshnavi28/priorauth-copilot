@@ -15,6 +15,19 @@ is not proven is pended for a clinician with the reason. **The system never auto
 - **Gold labels:** I labelled every note by hand against the NCD criteria ([`data/labels.json`](data/labels.json), with a
   reason per case). They are not clinician-verified.
 
+## Review agent (`priorauth/agent.py`)
+`POST /cases/agent` takes only the requested service (with its CPT/HCPCS code) and the notes. The agent:
+routes to the policy by billing code -> extracts evidence with keywords -> evaluates -> runs the LLM extractor only if
+keywords could not support an approval -> requests exactly the missing documentation -> briefs a clinician -> finishes.
+Planner: a rules playbook, or an LLM with function calling (`planner: "llm"`). Code tracks what is still outstanding
+and guards block everything else: unknown or wrong policy for the billing code, a second run of the same extractor,
+requests for facts that are not missing, finishing with anything but the engine's outcome. It cannot deny.
+
+| Agent on the 22 real cases | Routed | Correct decisions | False approvals | LLM extractions |
+|---|---|---|---|---|
+| Keyword extractor only (CI gate, offline) | 22/22 | 20/22 | 0 | 0 |
+| Keywords, then LLM only when needed | 22/22 | **22/22** | **0** | 18 |
+
 ## Results on the 22 real cases
 
 | Evidence extractor | Decisions correct | False approvals | Eligible cases approved | Facts correct |

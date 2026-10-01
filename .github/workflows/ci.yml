@@ -32,6 +32,10 @@ jobs:
         run: |
           python -m evals.run_eval keyword
           python -c "import json,sys; s=json.load(open('results/eval_keyword.json'))['summary']; sys.exit(1 if s['false_approvals'] else 0)"
+      - name: Review agent gate on the 22 real cases (offline) - every case routed and finished, no false approvals
+        run: |
+          python -m evals.run_agent_eval rules offline
+          python -c "import json,sys; s=json.load(open('results/agent_eval_rules_offline.json'))['summary']; sys.exit(1 if s['false_approvals'] or s['routed_correctly']<22 or s['finished']<22 else 0)"
   web:
     runs-on: ubuntu-latest
     defaults:
