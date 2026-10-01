@@ -58,3 +58,5 @@ jobs:
           docker run -d -p 8920:8920 -e PRIORAUTH_DEMO=1 -e PRIORAUTH_EXTRACTOR=keyword --name pa priorauth
           for i in $(seq 1 30); do curl -sf localhost:8920/health && break; sleep 2; done
           curl -sf localhost:8920/stats && curl -sf "localhost:8920/cases?status=pending_review" | head -c 300
+      - name: Postman API tests (21 cases, 12 edge cases) with Newman against the running container
+        run: npx --yes newman@6 run postman/priorauth.postman_collection.json --env-var baseUrl=http://localhost:8920

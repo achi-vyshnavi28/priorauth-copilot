@@ -1,0 +1,903 @@
+{
+ "info": {
+  "name": "PriorAuth Copilot API",
+  "description": "Functional and edge case tests for the prior authorization API. Requests run in order: later steps reuse ids saved by earlier ones.",
+  "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+ },
+ "variable": [
+  {
+   "key": "baseUrl",
+   "value": "http://localhost:8920"
+  },
+  {
+   "key": "newCase",
+   "value": ""
+  },
+  {
+   "key": "pendedCase",
+   "value": ""
+  }
+ ],
+ "item": [
+  {
+   "name": "Health",
+   "item": [
+    {
+     "name": "TC01 Service is up",
+     "request": {
+      "method": "GET",
+      "header": [],
+      "url": {
+       "raw": "{{baseUrl}}/health",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "health"
+       ]
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"Service is up\", function () {",
+         "    pm.response.to.have.status(200);",
+         "    pm.expect(pm.response.json().status).to.eql('ok');",
+         "});"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "name": "TC02 Every response carries a request id for support tickets",
+     "request": {
+      "method": "GET",
+      "header": [],
+      "url": {
+       "raw": "{{baseUrl}}/health",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "health"
+       ]
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"Every response carries a request id for support tickets\", function () {",
+         "    pm.expect(pm.response.headers.get('x-request-id')).to.match(/^[0-9a-f]{12}$/);",
+         "});"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Policies",
+   "item": [
+    {
+     "name": "TC03 Both CMS policies are served with their criteria",
+     "request": {
+      "method": "GET",
+      "header": [],
+      "url": {
+       "raw": "{{baseUrl}}/policies",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "policies"
+       ]
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"Both CMS policies are served with their criteria\", function () {",
+         "    const p = pm.response.json();",
+         "    pm.expect(p.map(x => x.ncd).sort()).to.eql(['100.1', '240.4']);",
+         "    p.forEach(x => pm.expect(x.criteria.length).to.be.above(0));",
+         "});"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Submit",
+   "item": [
+    {
+     "name": "TC04 A new request is decided and never auto denied",
+     "request": {
+      "method": "POST",
+      "header": [
+       {
+        "key": "Content-Type",
+        "value": "application/json"
+       }
+      ],
+      "url": {
+       "raw": "{{baseUrl}}/cases",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "cases"
+       ]
+      },
+      "body": {
+       "mode": "raw",
+       "raw": "{\n \"policy_id\": \"ncd_100_1_bariatric\",\n \"member_ref\": \"postman-1\",\n \"notes\": [\n  \"Patient with BMI of 41. History of hypertension and type 2 diabetes. Failed a 6 month supervised diet program.\"\n ]\n}",
+       "options": {
+        "raw": {
+         "language": "json"
+        }
+       }
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"A new request is decided and never auto denied\", function () {",
+         "    pm.response.to.have.status(201);",
+         "    const d = pm.response.json().decision;",
+         "    pm.expect(['approve', 'pend']).to.include(d.outcome);",
+         "    pm.collectionVariables.set('newCase', pm.response.json().case_id);",
+         "});"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "name": "TC05 The new case can be read back with its audit trail",
+     "request": {
+      "method": "GET",
+      "header": [],
+      "url": {
+       "raw": "{{baseUrl}}/cases/{{newCase}}",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "cases",
+        "{{newCase}}"
+       ]
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"The new case can be read back with its audit trail\", function () {",
+         "    pm.response.to.have.status(200);",
+         "    const c = pm.response.json();",
+         "    pm.expect(c.audit[0].action).to.eql('received');",
+         "    pm.expect(c.documents.length).to.eql(1);",
+         "});"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "name": "TC06 Unknown policy is rejected",
+     "request": {
+      "method": "POST",
+      "header": [
+       {
+        "key": "Content-Type",
+        "value": "application/json"
+       }
+      ],
+      "url": {
+       "raw": "{{baseUrl}}/cases",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "cases"
+       ]
+      },
+      "body": {
+       "mode": "raw",
+       "raw": "{\n \"policy_id\": \"ncd_999_unknown\",\n \"member_ref\": \"postman-2\",\n \"notes\": [\n  \"Patient with BMI of 41. History of hypertension and type 2 diabetes. Failed a 6 month supervised diet program.\"\n ]\n}",
+       "options": {
+        "raw": {
+         "language": "json"
+        }
+       }
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"Unknown policy is rejected\", function () {",
+         "    pm.response.to.have.status(404);",
+         "});"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "name": "TC07 Empty notes list is rejected",
+     "request": {
+      "method": "POST",
+      "header": [
+       {
+        "key": "Content-Type",
+        "value": "application/json"
+       }
+      ],
+      "url": {
+       "raw": "{{baseUrl}}/cases",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "cases"
+       ]
+      },
+      "body": {
+       "mode": "raw",
+       "raw": "{\n \"policy_id\": \"ncd_240_4_cpap\",\n \"member_ref\": \"postman-3\",\n \"notes\": []\n}",
+       "options": {
+        "raw": {
+         "language": "json"
+        }
+       }
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"Empty notes list is rejected\", function () {",
+         "    pm.response.to.have.status(422);",
+         "});"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "name": "TC08 Urgency outside standard or expedited is rejected",
+     "request": {
+      "method": "POST",
+      "header": [
+       {
+        "key": "Content-Type",
+        "value": "application/json"
+       }
+      ],
+      "url": {
+       "raw": "{{baseUrl}}/cases",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "cases"
+       ]
+      },
+      "body": {
+       "mode": "raw",
+       "raw": "{\n \"policy_id\": \"ncd_240_4_cpap\",\n \"member_ref\": \"postman-4\",\n \"notes\": [\n  \"Patient with BMI of 41. History of hypertension and type 2 diabetes. Failed a 6 month supervised diet program.\"\n ],\n \"urgency\": \"asap\"\n}",
+       "options": {
+        "raw": {
+         "language": "json"
+        }
+       }
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"Urgency outside standard or expedited is rejected\", function () {",
+         "    pm.response.to.have.status(422);",
+         "});"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "name": "TC09 Missing member reference is rejected",
+     "request": {
+      "method": "POST",
+      "header": [
+       {
+        "key": "Content-Type",
+        "value": "application/json"
+       }
+      ],
+      "url": {
+       "raw": "{{baseUrl}}/cases",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "cases"
+       ]
+      },
+      "body": {
+       "mode": "raw",
+       "raw": "{\n \"policy_id\": \"ncd_240_4_cpap\",\n \"notes\": [\n  \"Patient with BMI of 41. History of hypertension and type 2 diabetes. Failed a 6 month supervised diet program.\"\n ]\n}",
+       "options": {
+        "raw": {
+         "language": "json"
+        }
+       }
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"Missing member reference is rejected\", function () {",
+         "    pm.response.to.have.status(422);",
+         "});"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "name": "TC10 Member reference longer than 60 characters is rejected",
+     "request": {
+      "method": "POST",
+      "header": [
+       {
+        "key": "Content-Type",
+        "value": "application/json"
+       }
+      ],
+      "url": {
+       "raw": "{{baseUrl}}/cases",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "cases"
+       ]
+      },
+      "body": {
+       "mode": "raw",
+       "raw": "{\n \"policy_id\": \"ncd_240_4_cpap\",\n \"member_ref\": \"mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm\",\n \"notes\": [\n  \"Patient with BMI of 41. History of hypertension and type 2 diabetes. Failed a 6 month supervised diet program.\"\n ]\n}",
+       "options": {
+        "raw": {
+         "language": "json"
+        }
+       }
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"Member reference longer than 60 characters is rejected\", function () {",
+         "    pm.response.to.have.status(422);",
+         "});"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Queue",
+   "item": [
+    {
+     "name": "TC11 Clinician queue holds only pended cases, oldest first",
+     "request": {
+      "method": "GET",
+      "header": [],
+      "url": {
+       "raw": "{{baseUrl}}/cases?status=pending_review",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "cases"
+       ],
+       "query": [
+        {
+         "key": "status",
+         "value": "pending_review"
+        }
+       ]
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"Clinician queue holds only pended cases, oldest first\", function () {",
+         "    const q = pm.response.json();",
+         "    pm.expect(q.length).to.be.above(0);",
+         "    q.forEach(c => pm.expect(c.status).to.eql('pending_review'));",
+         "    const t = q.map(c => c.received_at);",
+         "    pm.expect(t).to.eql([...t].sort());",
+         "    pm.collectionVariables.set('pendedCase', q[0].case_id);",
+         "});"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "name": "TC12 A typo in the status filter is an error, not an empty queue",
+     "request": {
+      "method": "GET",
+      "header": [],
+      "url": {
+       "raw": "{{baseUrl}}/cases?status=pending",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "cases"
+       ],
+       "query": [
+        {
+         "key": "status",
+         "value": "pending"
+        }
+       ]
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"A typo in the status filter is an error, not an empty queue\", function () {",
+         "    pm.response.to.have.status(422);",
+         "});"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Read",
+   "item": [
+    {
+     "name": "TC13 Unknown case id",
+     "request": {
+      "method": "GET",
+      "header": [],
+      "url": {
+       "raw": "{{baseUrl}}/cases/PA-DOES-NOT-EXIST",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "cases",
+        "PA-DOES-NOT-EXIST"
+       ]
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"Unknown case id\", function () {",
+         "    pm.response.to.have.status(404);",
+         "});"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Review",
+   "item": [
+    {
+     "name": "TC14 Rationale shorter than 10 characters is rejected",
+     "request": {
+      "method": "POST",
+      "header": [
+       {
+        "key": "Content-Type",
+        "value": "application/json"
+       }
+      ],
+      "url": {
+       "raw": "{{baseUrl}}/cases/{{pendedCase}}/review",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "cases",
+        "{{pendedCase}}",
+        "review"
+       ]
+      },
+      "body": {
+       "mode": "raw",
+       "raw": "{\n \"clinician\": \"dr.rao\",\n \"outcome\": \"deny\",\n \"rationale\": \"no\"\n}",
+       "options": {
+        "raw": {
+         "language": "json"
+        }
+       }
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"Rationale shorter than 10 characters is rejected\", function () {",
+         "    pm.response.to.have.status(422);",
+         "});"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "name": "TC15 Outcome other than approve or deny is rejected",
+     "request": {
+      "method": "POST",
+      "header": [
+       {
+        "key": "Content-Type",
+        "value": "application/json"
+       }
+      ],
+      "url": {
+       "raw": "{{baseUrl}}/cases/{{pendedCase}}/review",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "cases",
+        "{{pendedCase}}",
+        "review"
+       ]
+      },
+      "body": {
+       "mode": "raw",
+       "raw": "{\n \"clinician\": \"dr.rao\",\n \"outcome\": \"maybe\",\n \"rationale\": \"Peer to peer review completed; documentation does not support medical necessity.\"\n}",
+       "options": {
+        "raw": {
+         "language": "json"
+        }
+       }
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"Outcome other than approve or deny is rejected\", function () {",
+         "    pm.response.to.have.status(422);",
+         "});"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "name": "TC16 Review of an unknown case",
+     "request": {
+      "method": "POST",
+      "header": [
+       {
+        "key": "Content-Type",
+        "value": "application/json"
+       }
+      ],
+      "url": {
+       "raw": "{{baseUrl}}/cases/PA-DOES-NOT-EXIST/review",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "cases",
+        "PA-DOES-NOT-EXIST",
+        "review"
+       ]
+      },
+      "body": {
+       "mode": "raw",
+       "raw": "{\n \"clinician\": \"dr.rao\",\n \"outcome\": \"deny\",\n \"rationale\": \"Peer to peer review completed; documentation does not support medical necessity.\"\n}",
+       "options": {
+        "raw": {
+         "language": "json"
+        }
+       }
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"Review of an unknown case\", function () {",
+         "    pm.response.to.have.status(404);",
+         "});"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "name": "TC17 A clinician can deny a pended case with a rationale",
+     "request": {
+      "method": "POST",
+      "header": [
+       {
+        "key": "Content-Type",
+        "value": "application/json"
+       }
+      ],
+      "url": {
+       "raw": "{{baseUrl}}/cases/{{pendedCase}}/review",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "cases",
+        "{{pendedCase}}",
+        "review"
+       ]
+      },
+      "body": {
+       "mode": "raw",
+       "raw": "{\n \"clinician\": \"dr.rao\",\n \"outcome\": \"deny\",\n \"rationale\": \"Peer to peer review completed; documentation does not support medical necessity.\"\n}",
+       "options": {
+        "raw": {
+         "language": "json"
+        }
+       }
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"A clinician can deny a pended case with a rationale\", function () {",
+         "    pm.response.to.have.status(200);",
+         "    const c = pm.response.json();",
+         "    pm.expect(c.status).to.eql('denied');",
+         "    pm.expect(c.decisions[c.decisions.length - 1].actor).to.eql('dr.rao');",
+         "});"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "name": "TC18 A decided case cannot be reviewed again",
+     "request": {
+      "method": "POST",
+      "header": [
+       {
+        "key": "Content-Type",
+        "value": "application/json"
+       }
+      ],
+      "url": {
+       "raw": "{{baseUrl}}/cases/{{pendedCase}}/review",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "cases",
+        "{{pendedCase}}",
+        "review"
+       ]
+      },
+      "body": {
+       "mode": "raw",
+       "raw": "{\n \"clinician\": \"dr.rao\",\n \"outcome\": \"approve\",\n \"rationale\": \"Peer to peer review completed; documentation does not support medical necessity.\"\n}",
+       "options": {
+        "raw": {
+         "language": "json"
+        }
+       }
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"A decided case cannot be reviewed again\", function () {",
+         "    pm.response.to.have.status(409);",
+         "});"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Agent",
+   "item": [
+    {
+     "name": "TC19 Agent routes a CPAP request by its HCPCS code",
+     "request": {
+      "method": "POST",
+      "header": [
+       {
+        "key": "Content-Type",
+        "value": "application/json"
+       }
+      ],
+      "url": {
+       "raw": "{{baseUrl}}/cases/agent",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "cases",
+        "agent"
+       ]
+      },
+      "body": {
+       "mode": "raw",
+       "raw": "{\n \"service\": \"CPAP device for obstructive sleep apnea (HCPCS E0601)\",\n \"member_ref\": \"postman-5\",\n \"notes\": [\n  \"Polysomnography showed an AHI of 22 events per hour. Daytime sleepiness reported.\"\n ]\n}",
+       "options": {
+        "raw": {
+         "language": "json"
+        }
+       }
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"Agent routes a CPAP request by its HCPCS code\", function () {",
+         "    pm.response.to.have.status(201);",
+         "    pm.expect(pm.response.json().decision.policy_id).to.eql('ncd_240_4_cpap');",
+         "    pm.expect(['approve', 'pend']).to.include(pm.response.json().decision.outcome);",
+         "});"
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "name": "TC20 Agent refuses a billing code no policy covers",
+     "request": {
+      "method": "POST",
+      "header": [
+       {
+        "key": "Content-Type",
+        "value": "application/json"
+       }
+      ],
+      "url": {
+       "raw": "{{baseUrl}}/cases/agent",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "cases",
+        "agent"
+       ]
+      },
+      "body": {
+       "mode": "raw",
+       "raw": "{\n \"service\": \"Knee arthroscopy (CPT 29881)\",\n \"member_ref\": \"postman-6\",\n \"notes\": [\n  \"Knee pain for 3 months.\"\n ]\n}",
+       "options": {
+        "raw": {
+         "language": "json"
+        }
+       }
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"Agent refuses a billing code no policy covers\", function () {",
+         "    pm.response.to.have.status(422);",
+         "});"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Stats",
+   "item": [
+    {
+     "name": "TC21 Statistics are consistent with the queue",
+     "request": {
+      "method": "GET",
+      "header": [],
+      "url": {
+       "raw": "{{baseUrl}}/stats",
+       "host": [
+        "{{baseUrl}}"
+       ],
+       "path": [
+        "stats"
+       ]
+      }
+     },
+     "event": [
+      {
+       "listen": "test",
+       "script": {
+        "type": "text/javascript",
+        "exec": [
+         "pm.test(\"Statistics are consistent with the queue\", function () {",
+         "    const s = pm.response.json();",
+         "    pm.expect(s.auto_approval_rate).to.be.within(0, 1);",
+         "    const n = Object.values(s.by_status).reduce((a, b) => a + b, 0);",
+         "    pm.expect(n).to.eql(s.cases);",
+         "    pm.expect(s.by_status.denied).to.be.at.least(1);",
+         "});"
+        ]
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

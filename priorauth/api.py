@@ -118,7 +118,8 @@ def agent_submit(body: AgentCaseIn):
 
 
 @app.get("/cases")
-def queue(status: str = "pending_review"):
+def queue(status: Literal["pending_review", "approved", "denied"] = "pending_review"):
+    # a typo such as ?status=pending used to return an empty queue silently; now it is a 422
     return service().cases.queue(status)
 
 

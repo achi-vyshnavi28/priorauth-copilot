@@ -51,6 +51,16 @@ documentation and 4 for criteria not met. That is the real-world problem prior a
 appears in order), and numbers must appear inside their own quote. A value that fails is discarded, and the agent gets
 one chance to repair the citation; 4 citations were repaired this way and 1 paraphrase was correctly rejected.
 
+## API testing with Postman (`postman/`, `docs/test_cases.md`)
+21 API test cases (12 edge cases) written once in `postman/build.py`, which generates both a **Postman collection**
+and a readable [test-case document](docs/test_cases.md). The collection runs in order against the demo API, reusing
+ids from earlier steps (submit, read back, clinician deny, re-review conflict), and checks validation (422), unknown
+ids (404), state conflicts (409), the request-id header and the stats. CI runs it with **Newman** against the Docker
+container on every push. The suite found one real bug: a typo in the queue filter (`?status=pending`) returned an
+empty clinician queue instead of an error; it now returns 422.
+
+    npx newman run postman/priorauth.postman_collection.json --env-var baseUrl=http://localhost:8920
+
 ## How it works
 
 ```
